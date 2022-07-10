@@ -1,5 +1,6 @@
 from django.urls import path, include
 from .views import *
+from chempionats import chempionats_url
 from accounts.views import login, clientadd, log_out
 
 urlpatterns = [
@@ -17,7 +18,7 @@ urlpatterns = [
     path('users', users, name='users'),
     path('scoreboard', scoreboard, name='scoreboard'),
 # Chempionats
-
+    path('chempionats', include(chempionats_url)),
 # Challenges
     path('challenges', challenges, name='challenges'),
     path('challenges/<id>', challengetask, name='challengetask'),
