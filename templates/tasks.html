@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="row d-flex justify-content-evenly mt-5">
+            {% for task in task %}
+            {% if task.solved %}
+            <div class="col-12 col-sm-3 mt-5">
+                <a href="task/{{ task.id }}">
+                    <button class="btn w-100 pt-2 p-5 shadow-lg" style="border-radius: 5px; border: #92dd12 solid 1px; background-color: #191F3A; color:white;">
+                        <h2 class="m-0 mt-3 fs-3" style="font-family: Roboto,sans-serif;">{{ task.title }}</h2>
+                        <h4 class="mt-2 fw-bold" style="color: #3ca8f3;">{{ task.point }}</h4>
+                        <hr class="mb-2 mt-2 p-0">
+                        <h2 class="fs-4 m-0 pt-2" style="color: #92dd12; font-family: sans-serif;">Yechilgan</h2>
+                    </button>
+                </a>
+            </div>
+            {% else %}
+            <div class="col-12 col-sm-3 mt-5">
+                <a href="task/{{ task.id }}">
+                    <button class="btn w-100 pt-2 p-5 shadow-lg" style="background-color: #191F3A; color:white; border: #ffaf00 solid 1px; border-radius: 5px;">
+                        <h2 class="m-0 mt-3 fs-3" style="font-family: Roboto, sans-serif;">{{ task.title }}</h2>
+                        <h4 class="mt-2 fw-bold" style="color: #3ca8f3;">{{ task.point }}</h4>
+                        <hr class="mb-2 mt-2 p-0">
+                        <h2 class="fs-4 m-0 pt-2" style="color: #e43a3c; font-family: sans-serif;">Urunib ko'ring</h2>
+                    </button>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+<div class="col-12 mt-5 p-5"></div>
+<div class="col-12 mt-5 p-3"></div>
+{% endblock content %}

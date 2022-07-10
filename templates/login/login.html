@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+        content=" Knight Squad Hack Zone is an online platform created by Knight Squad community. This platform will help you to test your hacking skills and exchange ideas and methods with other people in the field of cyber security."
+        name="description">
+    <meta content="Knight Squad" name="author">
+    <link rel="shortcut icon" href="themes/default-home/assets/images/ks-icon.png">
+    <link rel="icon" href="themes/default-home/ks-icon.png" type="image/x-icon" />
+    <meta name="Keywords" content="Knight Squad, KS Hack Zone, Capture The Flag, Hacking Practice" />
+    <title>CTF Ubtuit Uz</title>
+    <link rel="icon" href="themes/default-home/ks-icon.png" type="image/x-icon" />
+    <link href="{% static 'login/themes/default/assets/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'login/https _kshackzone.com_themes_default_assets_plugins_sidebar_sidebar.css' %}"
+        rel="stylesheet">
+    <link href="{% static 'login/css_sidemenu.css' %}" rel="stylesheet">
+    <link href="{% static 'login/css_style.css' %}" rel="stylesheet">
+    <link href="{% static 'login/css_skin-modes.css' %}" rel="stylesheet">
+    <link href="{% static 'login/style-dark.css' %}" rel="stylesheet">
+    <link href="{% static 'login/css_animate.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="main-body dark-theme">
+    <div class="page">
+        <div class="my-auto page page-h">
+            <div class="main-signin-wrapper">
+
+                <div class="main-card-signin d-md-flex wd-100p">
+                    <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white">
+                        <div class="my-auto authentication-pages">
+                            <div>
+                                <img src="{% static 'login/neon-ks-logo.png' %}" class=" m-0 mb-4" alt="logo">
+                                <div align="center">
+                                    <h5 class="mb-4">CTF Ubtuit Uz ga xush kelibsiz!</h5>
+                                    <p class="mb-5"> Tizimga kiring va buzishni boshlang. </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 wd-md-50p">
+                        <div align="center">
+
+                            <a href="{% url 'home' %}" class="btn btn-info">Bosh sahifa</a>
+                        </div><br>
+
+                        <div class="main-signin-header">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>Foydalanuvchi nomi</label><input class="form-control" name="username"
+                                        placeholder="Foydalanuvchi nomingizni kiriting" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>Parol</label> <input class="form-control" name="password"
+                                        placeholder="Parolingizni kiriting" type="password">
+                                </div><button class="btn btn-main-primary btn-block">Tizimga kirish</button>
+                            </form>
+                        </div>
+                        {% for m in messages %}
+                        <div class="main-signin-footer mt-3 mg-t-5">
+                            <p class="text-center p-1 bg-danger text-white rounded">{{ m }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery_jquery.min.js"></script>
+    <script src="bootstrap_js_bootstrap.bundle.min.js"></script>
+    <script src="ionicons_ionicons.js"></script>
+    <script src="moment_moment.js"></script>
+    <script src="themes/default/assets/js/eva-icons.min.js"></script>
+    <script src="themes/default/assets/plugins/rating/jquery.rating-stars.js"></script>
+    <script src="themes/default/assets/plugins/rating/jquery.barrating.js"></script>
+    <script src="themes/default/assets/js/custom.js"></script>
+
+</body>
+
+</html>

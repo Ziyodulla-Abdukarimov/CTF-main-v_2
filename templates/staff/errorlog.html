@@ -1,0 +1,33 @@
+{% extends 'staff.html' %}
+
+{% block content %}
+<div class="row">
+  <p class="mt-5 text-white fs-3 text-center">Error Loglar</p>
+</div>
+<div class="row mt-3 rounded">
+  <div class="col-12 rounded" style="background-color: #191F3A;">
+    <table class="table text-white rounded">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Familya</th>
+          <th scope="col">Isim</th>
+          <th scope="col">Flag</th>
+          <th scope="col">Vaqt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for res in errorlog %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td><a href="profile/{{ res.id }}">{{ res.hacker.admin.first_name }}</a></td>
+          <td><a href="profile/{{ res.id }}">{{ res.hacker.admin.last_name }}</a></td>
+          <td>{{ res.flag }}</td>
+          <td>{{ res.date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}

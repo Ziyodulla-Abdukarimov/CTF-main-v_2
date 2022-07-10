@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<script src="{% static 'home/lib/chart-master/Chart.js' %}"></script>
+<div class="row d-flex justify-content-evenly mt-5">
+  {% for hackers in client %}
+  <div class="col-12 col-sm-5 p-5 rounded" style="background-color: #191F3A;">
+    <img src="{% static 'home/img/ui-sam.jpg' %}" alt="" style="border-radius: 50%; height: 150px;">
+    <h3 class="text-white mt-3">{{ hackers.admin.first_name }} {{ hackers.admin.last_name }}</h3>
+    <p class="w-50 text-white rounded p-2" style="background-color: #FF5959;">{{ hackers.admin.username }}</p>
+  </div>
+  {% endfor %}
+  <div class="col-12 col-sm-4 mt-5">
+    <div class="darkblue-panel" style="background-color: #0C1023;">
+        <canvas id="serverstatus02" height="200" width="200"></canvas>
+        <script>
+          var doughnutData = [{
+              value: {{ cout_solved }},
+              color: "#1c9ca7"
+            },
+            {
+              value: {{ error_count }},
+              color: "#f68275"
+            }
+          ];
+          var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
+        </script>
+    </div>
+  </div>
+  <div class="col-12 col-sm-3 mt-5">
+    <p class="p-5 pt-3 pb-3 text-white rounded" style="background-color: #1c9ca7; font-family: Arial, Helvetica, sans-serif;">To'gri ishlagnlar soni: {{ cout_solved }}</p>
+    <p class="p-5 pt-3 pb-3 mt-5 text-white rounded" style="background-color: #f68275; font-family: Arial, Helvetica, sans-serif;">Xatolar soni: {{ error_count }}</p>
+  </div>
+  <div class="col-12 p-5 m-2 rounded" style="background-color: #191F3A;">
+    <h3 class="text-center text-white" style="font-family: Arial, Helvetica, sans-serif;">Yechilgan Topshiriqlar</h3>
+    <hr>
+    <div class="col-12" style="background-color: #191F3A;">
+      <table class="table text-white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Savol nomeri</th>
+              <th scope="col">Savol mavzusi</th>
+              <th scope="col">Ishlangan vaqti</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for task_solved in task_solved %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ task_solved.task.id }}</td>
+              <td>{{ task_solved.task.title }}</td>
+              <td>{{ task_solved.date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--  /darkblue panel -->
+  </div>
+  </div>
+</div>
+{% endblock content %}

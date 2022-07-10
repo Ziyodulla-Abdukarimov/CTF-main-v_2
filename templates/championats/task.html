@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .hover:hover {
+        background-color: #5965F9;
+        color: white;
+    }
+
+    .hover {
+        color: #5965F9;
+    }
+</style>
+{% for task in task %}
+<div class="row m-5 p-5 rounded" style="background-color: #191F3A;">
+    <div class="col-5 col-sm-1 p-3 m-2" style="background-color: #5965F9; border-radius: 5px;">
+        <p class="mb-0 text-white text-center">Savol: {{ task.id }}</p>
+    </div>
+    <div class="col-5 col-sm-1 p-3 m-2 pb-0" style="background-color: #08C18D; border-radius: 5px;">
+        <p class="mb-0 text-white text-center">Bal: {{ task.point }}</p>
+    </div>
+    <h2 class="text-white m-3 ms-0 text-center">{{ task.title }}</h2>
+    <p class="text-white fs-4" style="font-family: Arial, Helvetica, sans-serif;">{{ task.body }}</p>
+    <p class="text-white fs-4 mt-4">{{ task.text }}</p>
+    <p><a href="{{ task.link }}" target="_blank">{{ task.link }}</a></p>
+</div>
+<div class="row m-5 p-5 rounded" style="background-color: #191F3A;">
+    <h2 class="text-white fs-3" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Javobni yuborish</h2>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <div class="col-12 col-sm-8 ps-0 pe-0">
+                <input class="form-control p-3 fs-3 rounded"
+                    style="background-color: #292F4B; border: 1px solid #41485F; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" name="flag"
+                    placeholder="CTF_UBTUIT{}">
+            </div>
+            <div class="col-12 ps-0 pe-0 col-sm-2 pe-sm-3 ms-sm-5 ms-0 mt-sm-0 mt-2">
+                <button type="submit" class="btn pb-0 w-100 hover" style="border: 1px solid #5965F9;">
+                    <p class="fs-4 mb-2">Yuborish</p>
+                </button>
+            </div>
+            {% if test %}
+            <div class="col-12 text-center col-sm-1 rounded bg-success text-white pt-2 pt-sm-3">
+                <i class="fa fa-check fs-3"></i>
+            </div>
+            {% endif %}
+        </div>
+    </form>
+
+    {% for m in messages %}
+    {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <h2 class="text-center mt-4 ms-3 me-3 p-2 text-white fs-3 rounded"
+        style="background-color: #C82333; font-family: Arial, Helvetica, sans-serif;">{{ m }}</h2>
+    {% elif m.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+    <h2 class="text-center mt-4 ms-3 me-3 p-2 text-white bg-success fs-3 rounded"
+        style="font-family: Arial, Helvetica, sans-serif;">{{ m }}</h2>
+    {% elif m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <h2 class="text-center mt-4 ms-3 me-3 text-white rounded fs-3 p-2"
+        style="background-color: #5965F9; font-family: Arial, Helvetica, sans-serif;">{{ m }}</h2>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock content %}
