@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <div class="row d-flex justify-content-evenly mt-5">
+            {% for blog in object_list %}
+            <div class="col-12 col-sm-3 mt-5">
+                <a href="blogs/{{ blog.id }}">
+                    <button class="btn w-100 pt-2 p-5 shadow-lg" style="background-color: #2a3042; color:white; border: #ffaf00 solid 1px; border-radius: 5px;">
+                        <h2 class="m-0 mt-3 fs-3" style="font-family: Roboto, sans-serif;">{{ blog.title }}</h2>
+                        <hr style="background-color: #3eb1ff;">
+                        <h4 style="color: #87cb17;">{{ blog.summary }}</h4>
+                    </button>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+<div class="col-12 mt-5 p-5"></div>
+<div class="col-12 mt-5 p-3"></div>
+{% endblock content %}
