@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <div class="container">
     <div class="row">
         <div class="col-12 mt-5" style="background-color: #2a3042;">
             <h1 class="pt-5 fs-3 text-white text-center" style="font-family: sans-serif;">{{ chempionats.title }}</h1>
+            <div class="ps-5">
+                <a href="" style="color: #9aa4c2; font-family: sans-serif;"><i class="text-white fa fa-info"></i> Musobqa haqida &emsp;</a>
+                <a href="" style="color: #9aa4c2; font-family: sans-serif;"><i class="text-white fa fa-chart-line"></i> Reyting &emsp;</a>
+                <a href="{% url 'chempionats_scoreboard' %}" style="color: #9aa4c2; font-family: sans-serif;"><i class="text-white fa fa-users"></i> Ishtirokchilar</a>
+            </div>
             <hr>
+            {% block content1 %}
             <div class="text-white p-5 pt-0 fs-5" style="font-family: sans-serif;">
                 <p class="pb-4">{{ chempionats.description }}</p>
                 <p class=""><i class="fa-solid fa-hourglass-clock"></i>Boshlanish vaqti: {{ chempionats.start_date }}</p>
@@ -16,14 +23,17 @@
             </div>
             <div class="text-center p-5 pt-2">
                 {% if chempionat_user %}
-                <h1>Ishladiku</h1>
-                {% else %}
+                <a href="/chempionats/chempionat_tasks/{{ chempionats.id }}">
+                    <button type="submit" class="btn btn-primary ps-5 pe-5 pt-2 pb-2 fs-4">Boshlash <i class="fa fa-flag"></i></button>
+                </a>
+                    {% else %}
                 <form method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-primary ps-5 pe-5 pt-2 pb-2 fs-4">Boshlash <i class="fa fa-flag"></i></button>
                 </form>
                 {% endif %}
             </div>
+            {% endblock content1 %}
         </div>
     </div>
 </div>

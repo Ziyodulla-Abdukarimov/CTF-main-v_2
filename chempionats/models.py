@@ -23,9 +23,6 @@ class Chempionat_user(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateField(auto_now_add=True)
 
-    def __str__(self):
-        return self.user
-
 
 class Chempionat_task(models.Model):
     chempstitle = models.ForeignKey(Chempionats, on_delete=models.CASCADE, related_name='chemptask')
@@ -43,6 +40,8 @@ class Chempionat_task(models.Model):
 class Chempionat_Journal(models.Model):
     user = models.ForeignKey(Chempionat_user, on_delete=models.CASCADE)
     task = models.ForeignKey(Chempionat_task, on_delete=models.CASCADE)
+    point = models.IntegerField()
 
     update_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    

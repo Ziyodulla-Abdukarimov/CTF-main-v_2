@@ -15,7 +15,7 @@ def chempionats(request):
 
 def chempionats_about(request, pk):
     if request.method == 'POST':
-        Chempionat_user(user=Client.objects.get(admin=request.user.id), chempionats=Chempionats.objects.get(id=pk)).save()
+        Chempionat_user(user=Client.objects.get(id=request.user.id), chempionats=Chempionats.objects.get(id=pk)).save()
     context = {
         'chempionats': Chempionats.objects.get(id=pk),
         'chempionat_user': Chempionat_user.objects.filter(user=request.user.id).exists(),
@@ -26,13 +26,31 @@ def chempionats_about(request, pk):
 def chempionat_tasks(request, pk):
     context = {
         'task': Chempionat_task.objects.filter(chempstitle=pk),
+        'chempionat_id': Chempionats.objects.get(id=pk).id,
     }
     return render(request, 'chempionats/chemptask.html', context)
 
 
-def chempionat_tasks_open(request, pk):
+def chempionat_tasks_open(request, id, pk):
+    if request.method == 'POST':
+        flag = request.POST['flag']
+        if flag == Chempionat_task.objects.get(id=pk).flag:
+            user_id = request.user.id
+            if Chempionat_Journal.objects.filter(user=Chempionat_user.objects.get(user=user_id), task=Chempionat_task.objects.get(id=pk)).exists():
+                messages.success(request, "Avval yechgansiz")
+            else:
+                Chempionat_Journal(user=Chempionat_user.objects.get(user=user_id),task=Chempionat_task.objects.get(id=pk),point=Chempionat_task.objects.get(id=pk).point).save()
+                update_point = Chempionat_user.objects.get(user=user_id).point + Chempionat_task.objects.get(id=pk).point
+                Chempionat_user.objects.filter(user=user_id).update(point=update_point)
+                messages.info(request, 'To\'g\'ri javob')
+        else:
+            messages.error(request, "Xato javob")
     context = {
         'task': Chempionat_task.objects.filter(id=pk),
         'test': Chempionat_Journal.objects.filter(user=Chempionat_user.objects.get(user=request.user.id), task=Chempionat_task.objects.get(id=pk)),
     }
-    return(request, 'chempionats/task.html', context)
+    return render(request, 'chempionats/task.html', context)
+
+
+def chempionats_scoreboard(request):
+    return render(request, 'chempionats/chempionats_scoreboard.html')
