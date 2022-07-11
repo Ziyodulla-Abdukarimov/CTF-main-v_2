@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as authlogin, logout
-from more_itertools import first
+#from more_itertools import first
 from .models import CustomUser
 
 # Create your views here.
