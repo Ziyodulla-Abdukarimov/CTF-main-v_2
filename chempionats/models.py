@@ -15,6 +15,18 @@ class Chempionats(models.Model):
         return self.title
 
 
+class Chempionat_user(models.Model):
+    user = models.ForeignKey(Client, on_delete=models.CASCADE)
+    chempionats = models.ForeignKey(Chempionats, on_delete=models.CASCADE)
+    point = models.IntegerField(default=0)
+
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user
+
+
 class Chempionat_task(models.Model):
     chempstitle = models.ForeignKey(Chempionats, on_delete=models.CASCADE, related_name='chemptask')
     title = models.CharField(max_length=100, verbose_name='Mavzu')
@@ -28,9 +40,9 @@ class Chempionat_task(models.Model):
         return self.title
 
 
-class Chempionat_user(models.Model):
-    user = models.ForeignKey(Client, on_delete=models.CASCADE)
-    point = models.IntegerField(default=0)
+class Chempionat_Journal(models.Model):
+    user = models.ForeignKey(Chempionat_user, on_delete=models.CASCADE)
+    task = models.ForeignKey(Chempionat_task, on_delete=models.CASCADE)
 
-    updated_at = models.DateTimeField(auto_now=True)
-    created_at = models.DateField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -18,7 +18,7 @@ urlpatterns = [
     path('users', users, name='users'),
     path('scoreboard', scoreboard, name='scoreboard'),
 # Chempionats
-    path('chempionats', include(chempionats_url)),
+    path('chempionats/', include(chempionats_url)),
 # Challenges
     path('challenges', challenges, name='challenges'),
     path('challenges/<id>', challengetask, name='challengetask'),

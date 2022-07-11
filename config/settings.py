@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'CTF.apps.CtfConfig',
+    'chempionats.apps.ChempionatsConfig',
 ]
 
 MIDDLEWARE = [

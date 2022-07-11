@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <div class="row d-flex justify-content-evenly mt-5">
-            {% for task in chempionats %}
-            <div class="col-12 col-sm-4 mt-5">
-                <a href="chempionat/{{ task.id }}"><button class="btn ms-5 w-75 pt-2 p-5 shadow-lg" style="background-color: #191F3A; color:white; border: #30364E solid 1px; border-radius: 5px;"><h2 class="m-0 mt-3" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">{{ task.title }}</h2><h4 class="mt-2 fw-bold" style="color: #4ECDC4;">{{ task.point }}</h4></button></a>
-            </div>
-            {% endfor %}
-        </div>
-        <h1>{{ a }}</h1>
-<div class="col-12 mt-5 p-5"></div>
+{% load static %}
+<style>
+    tr:nth-child(odd) {
+     background: #32384b;
+     color: white;
+    }
+    thead tr {
+     background: #2a3042 !important;
+     color: white;
+    }
+    td, th {
+     padding-top: 1em !important;
+     padding-bottom: 1em !important;
+     border: 0px !important;
+     vertical-align: middle !important;
+    }
+    </style>
 <div class="col-12 mt-5 p-3"></div>
+<table class="table fs-5" style="font-family: sans-serif;">
+    {% for task in chempionats %}
+    <thead>
+      <tr style="color: #a6b0cf;">
+        <th>#</th>
+        <th>Nomi</th>
+        <th>Boshlanish vaqti</th>
+        <th>Tugash vaqti</th>
+        <th>Qatnashish</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="p-3 mt-4">
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ task.title }}</td>
+        <td>{{ task.start_date }}</td>
+        <td>{{ task.end_date }}</td>
+        <td><a href="{{ task.id }}"><button class="btn btn-primary p-2 fs-5 rounded">Qatnashish</button></a></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
 {% endblock content %}
