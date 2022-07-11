@@ -1,0 +1,41 @@
+{% extends 'chempionats/chempionats_about.html' %}
+{% block content1 %}
+{% load static %}
+<style>
+    tr:nth-child(odd) {
+     background: #32384b;
+     color: white;
+    }
+    thead tr {
+     background: #2a3042 !important;
+     color: white;
+    }
+    td, th {
+     padding-top: 1em !important;
+     padding-bottom: 1em !important;
+     border: 0px !important;
+     vertical-align: middle !important;
+    }
+    </style>
+<table class="table fs-5" style="font-family: sans-serif;">
+    <thead>
+      <tr style="color: #a6b0cf;">
+        <th>#</th>
+        <th>FIO</th>
+        <th>Username</th>
+        <th>Bal</th>
+      </tr>
+    </thead>
+    {% for task in chempionat_user_all %}
+    <tbody>
+      <tr class="p-3 mt-4">
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ task.user.admin.last_name }} {{ task.user.admin.first_name }}</td>
+        <td>{{ task.user.admin.username }}</td>
+        <td>{{ task.point }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+  <div class="col-12 p-3"></div>
+{% endblock content1 %}

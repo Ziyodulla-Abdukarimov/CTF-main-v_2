@@ -3,6 +3,7 @@ from accounts.models import Client
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .models import Chempionat_Journal, Chempionat_user, Chempionats, Chempionat_task
+from django.db.models import Count, Q
 
 # Create your views here.
 
@@ -25,6 +26,7 @@ def chempionats_about(request, pk):
 
 def chempionat_tasks(request, pk):
     context = {
+        'tasks': Chempionat_task.objects.annotate(solved=Count('solvents', filter=Q(solvents__user__user__admin=request.user))),
         'task': Chempionat_task.objects.filter(chempstitle=pk),
         'chempionat_id': Chempionats.objects.get(id=pk).id,
     }
@@ -59,3 +61,12 @@ def chempionats_scoreboard(request, pk):
         'chempionat_user_all': Chempionat_user.objects.all(),
     }
     return render(request, 'chempionats/chempionats_scoreboard.html', context)
+
+
+def chempionats_rating(request, pk):
+    context = {
+        'chempionats': Chempionats.objects.get(id=pk),
+        'chempionat_user': Chempionat_user.objects.filter(user=request.user.id).exists(),
+        'chempionat_user_all': Chempionat_user.objects.all(),
+    }
+    return render(request, 'chempionats/chempionats_rating.html', context)

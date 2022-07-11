@@ -39,7 +39,7 @@ class Chempionat_task(models.Model):
 
 class Chempionat_Journal(models.Model):
     user = models.ForeignKey(Chempionat_user, on_delete=models.CASCADE)
-    task = models.ForeignKey(Chempionat_task, on_delete=models.CASCADE)
+    task = models.ForeignKey(Chempionat_task, on_delete=models.CASCADE, related_name='solvents')
     point = models.IntegerField()
 
     update_at = models.DateTimeField(auto_now=True)
