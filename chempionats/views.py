@@ -53,4 +53,9 @@ def chempionat_tasks_open(request, id, pk):
 
 
 def chempionats_scoreboard(request, pk):
-    return render(request, 'chempionats/chempionats_scoreboard.html')
+    context = {
+        'chempionats': Chempionats.objects.get(id=pk),
+        'chempionat_user': Chempionat_user.objects.filter(user=request.user.id).exists(),
+        'chempionat_user_all': Chempionat_user.objects.all(),
+    }
+    return render(request, 'chempionats/chempionats_scoreboard.html', context)
