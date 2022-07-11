@@ -6,9 +6,9 @@ from .models import Blogs
 
 class BlogsListView(ListView):
     model = Blogs
-    template_name = 'blogs_list.html'
+    template_name = 'blogs/blogs_list.html'
 
 
 class BlogsDetailView(DetailView):
     model = Blogs
-    template_name = 'blog_detail.html'
+    template_name = 'blogs/blog_detail.html'
