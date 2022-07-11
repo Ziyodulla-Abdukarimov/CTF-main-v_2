@@ -52,5 +52,5 @@ def chempionat_tasks_open(request, id, pk):
     return render(request, 'chempionats/task.html', context)
 
 
-def chempionats_scoreboard(request):
+def chempionats_scoreboard(request, pk):
     return render(request, 'chempionats/chempionats_scoreboard.html')
