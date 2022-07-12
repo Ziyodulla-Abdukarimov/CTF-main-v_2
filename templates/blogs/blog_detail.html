@@ -11317,7 +11317,13 @@ textarea.form-control-lg {
                         <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Comment form-->
-                                <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                <form class="mb-4">
+                                    {% csrf_token %}
+                                    <textarea name='comment' class="form-control" rows="3" placeholder="Join the discussion and leave a comment!">
+
+                                    </textarea>
+                                    <button>Yozish</button>
+                                </form>
                                 <!-- Comment with nested comments-->
 
                                 <!-- Single comment-->
