@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'CTF.apps.CtfConfig',
     'chempionats.apps.ChempionatsConfig',
     'blogs'
+    'lessons'
 ]
 
 MIDDLEWARE = [
