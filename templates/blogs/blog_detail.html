@@ -11317,11 +11317,11 @@ textarea.form-control-lg {
                         <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Comment form-->
-                                <form class="mb-4">
+                                <form class="mb-4" method="post">
                                     {% csrf_token %}
                                     <textarea name='comment' class="form-control" rows="3" placeholder="Join the discussion and leave a comment!">
                                     </textarea>
-                                    <input name="id" value="{{ object.id }}" class="hidden">
+                                    <input name="id" value="{{ object.id }}" type="hidden">
                                     <button type="submit">Yozish</button>
                                 </form>
                                 <!-- Comment with nested comments-->
@@ -11350,4 +11350,4 @@ textarea.form-control-lg {
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-{%endblock content%}
+{% endblock content %}
