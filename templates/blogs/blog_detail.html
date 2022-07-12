@@ -11319,8 +11319,7 @@ textarea.form-control-lg {
                                 <!-- Comment form-->
                                 <form class="mb-4" method="post">
                                     {% csrf_token %}
-                                    <textarea name='comment' class="form-control" rows="3" placeholder="Join the discussion and leave a comment!">
-                                    </textarea>
+                                    <textarea name='comment' class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
                                     <input name="id" value="{{ blog.id }}" type="hidden">
                                     <button type="submit">Yozish</button>
                                 </form>
