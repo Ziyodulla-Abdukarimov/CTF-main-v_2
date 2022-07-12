@@ -1,3 +1,4 @@
+from multiprocessing.connection import Client
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Blogs , Comment
@@ -13,22 +14,16 @@ class BlogsListView(ListView):
     model = Blogs
     template_name = 'blogs/blogs_list.html'
 
-
-class BlogsDetailView(DetailView):
-    model = Blogs
-    template_name = 'blogs/blog_detail.html'
-
-
-def commentadd(request):
+def blogdetail(request, pk):
     if request.method == 'POST':
         comment = request.POST['comment']
         id = request.POST['id']
-        if comment!=None:
-            try:
-                comment = Comment(comment=comment,author=request.user,blog=Blogs.objects.get(id=id))
-                comment.save()
-            except:
-                messages.success(request, 'Bunday comment yozib bo`lmaydi!')
+        if comment !=None:
+            Comment(blog=Blogs.objects.get(id=pk),comment=comment,author=Client.objects.get(admin=request.user.id)).save()
         else:
             messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
-    return render(request,'blogs/blog_detail.html')
+    context = {
+        'blog': Blogs.objects.get(id=pk),
+        'comment': Comment.objects.filter(blog = Blogs.objects.get(id=pk)),
+    }
+    return render(request, 'blogs/blog_detail.html', context)

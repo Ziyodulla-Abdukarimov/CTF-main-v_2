@@ -11300,16 +11300,16 @@ textarea.form-control-lg {
                         <!-- Post header-->
                         <header class="mb-4">
                             <!-- Post title-->
-                            <h1 class="fw-bolder mb-1">{{object.title}}</h1>
+                            <h1 class="fw-bolder mb-1 text-white">{{blog.title}}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">{{object.date}}</div>
+                            <div class="text-muted fst-italic mb-2 text-white">{{blog.date}}</div>
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" src="{{object.photo.url}}" alt="{{object.title}}" /></figure>
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{ blog.photo.url }}" alt="{{blog.title}}" /></figure>
                         <!-- Post content-->
                         <section class="mb-5">
-                            <p class="fs-5 mb-4">{{object.body}}</p>
-                            <h2 class="fw-bolder mb-4 mt-5">author: {{object.outhor}} sana: {{object.date}}</h2>
+                            <p class="fs-5 mb-4">{{blog.body}}</p>
+                            <h2 class="fw-bolder mb-4 mt-5">author: {{blog.outhor}} sana: {{blog.date}}</h2>
                         </section>
                     </article>
                     <!-- Comments section-->
@@ -11321,13 +11321,13 @@ textarea.form-control-lg {
                                     {% csrf_token %}
                                     <textarea name='comment' class="form-control" rows="3" placeholder="Join the discussion and leave a comment!">
                                     </textarea>
-                                    <input name="id" value="{{ object.id }}" type="hidden">
+                                    <input name="id" value="{{ blog.id }}" type="hidden">
                                     <button type="submit">Yozish</button>
                                 </form>
                                 <!-- Comment with nested comments-->
 
                                 <!-- Single comment-->
-                                {% for i in blogs.comments.all %}
+                                {% for i in comment %}
                                 <div class="d-flex">
                                     <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                     <div class="ms-3">
