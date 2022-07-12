@@ -22,9 +22,10 @@ class BlogsDetailView(DetailView):
 def commentadd(request):
     if request.method == 'POST':
         comment = request.POST['comment']
+        id = request.POST['id']
         if comment!=None:
             try:
-                comment = Comment.comment=comment
+                comment = Comment(comment=comment,author=request.user,blog=Blogs.objects.get(id=id))
                 comment.save()
             except:
                 messages.success(request, 'Bunday comment yozib bo`lmaydi!')
