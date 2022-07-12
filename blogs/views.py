@@ -1,12 +1,9 @@
-from multiprocessing.connection import Client
+from accounts.models import Client
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView
 from .models import Blogs , Comment
 #comment un
-from django.shortcuts import render, HttpResponseRedirect, redirect
-from django.urls import reverse
 from django.contrib import messages
-from django.contrib.auth import authenticate, login as authlogin, logout
 
 # Create your views here.
 
@@ -16,10 +13,10 @@ class BlogsListView(ListView):
 
 def blogdetail(request, pk):
     if request.method == 'POST':
-        comment = request.POST['comment']
+        comm = request.POST['comment']
         id = request.POST['id']
-        if comment !=None:
-            Comment(blog=Blogs.objects.get(id=pk),comment=comment,author=Client.objects.get(admin=request.user.id)).save()
+        if comm !=None:
+            Comment(blog=Blogs.objects.get(id=id), comment=comm, author=Client.objects.get(admin = request.user.id)).save()
         else:
             messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
     context = {
