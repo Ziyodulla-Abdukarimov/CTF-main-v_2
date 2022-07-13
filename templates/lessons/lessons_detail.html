@@ -3,13 +3,13 @@
 {% block content %}
 <div class="row m-5">
   <div class="col-12" style="font-family: 'Roboto', sans-serif; background-color: #2a3042;">
-    <h1 class="text-white p-5 pb-0 fs-2">{{ lessons.title }}</h1>
+    <h1 class="text-white p-5 pb-0 fs-2">{{ lesson.title }}</h1>
     <hr>
-    <p class="ps-5 fs-4" style="color: #a6b0cf;">{{ lessons.summary }}</p>
-    <p class="p-5 pt-0 pb-0 fs-4" style="color: #a6b0cf;">{{ lessons.body }}</p>
+    <p class="ps-5 fs-4" style="color: #a6b0cf;">{{ lesson.summary }}</p>
+    <p class="p-5 pt-0 pb-0 fs-4" style="color: #a6b0cf;">{{ lesson.body }}</p>
     <div class="d-flex justify-content-between mt-5">
-      <p class="fs-3 ms-5">Mualif: {{ lessons.author }}</p>
-      <p class="me-5" style="color: #a6b0cf;">{{ lessons.date }}</p>
+      <p class="fs-3 ms-5">Mualif: {{ lesson.author }}</p>
+      <p class="me-5" style="color: #a6b0cf;">{{ lesson.date }}</p>
     </div>
   </div>
   <div class="col-12 mt-4 p-5" style="background-color: #2a3042; font-family: 'Roboto', sans-serif;">

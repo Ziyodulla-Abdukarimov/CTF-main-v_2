@@ -20,6 +20,6 @@ def lesonsdetail(request, pk):
             messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
     context = {
         'lesson': Lessons.objects.get(id=pk),
-        'comment': Lessons.objects.filter(lessons = Lessons.objects.get(id=pk)),
+        'comment': LessonsComment.objects.filter(lessons = Lessons.objects.get(id=pk)),
     }
     return render(request, 'lessons/lessons_detail.html', context)
