@@ -24,7 +24,8 @@ urlpatterns = [
     path('', include(ctf_urls)),
     path('staff', include(staff_urls)),
     path('blogs/',include('blogs.urls')),
-    path('lessons/',include('lessons.urls'))
+    path('lessons/',include('lessons.urls')),
+    path('chat/',include('chat.urls')),
 ]
 
 if settings.DEBUG:

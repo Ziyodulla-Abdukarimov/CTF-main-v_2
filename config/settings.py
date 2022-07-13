@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'chempionats.apps.ChempionatsConfig',
     'blogs.apps.BlogsConfig',
     'lessons.apps.LessonsConfig',
+    'chat',
 ]
 
 MIDDLEWARE = [
