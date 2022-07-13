@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from accounts.models import Client
 
 # Create your models here.
 
@@ -19,3 +20,15 @@ class Lessons(models.Model):
         return self.title
     def get_absolute_url(self):
         return reverse('lessons_detail',args=[str(self.id)])
+
+
+class LessonsComment(models.Model):
+    lessons = models.ForeignKey(Lessons, on_delete=models.CASCADE, related_name='comments')
+    comment = models.CharField(max_length=150)
+    author = models.ForeignKey(Client, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
+    class Meta:
+        ordering =('-date',)
+    def __str__(self):
+        return self.comment
