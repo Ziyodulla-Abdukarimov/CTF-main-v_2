@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row m-5">
+  <div class="col-12" style="font-family: 'Roboto', sans-serif; background-color: #2a3042;">
+    <h1 class="text-white p-5 pb-0 fs-2">{{ lessons.title }}</h1>
+    <hr>
+    <p class="ps-5 fs-4" style="color: #a6b0cf;">{{ lessons.summary }}</p>
+    <p class="p-5 pt-0 pb-0 fs-4" style="color: #a6b0cf;">{{ lessons.body }}</p>
+    <div class="d-flex justify-content-between mt-5">
+      <p class="fs-3 ms-5">Mualif: {{ lessons.author }}</p>
+      <p class="me-5" style="color: #a6b0cf;">{{ lessons.date }}</p>
+    </div>
+  </div>
+  <div class="col-12 mt-4 p-5" style="background-color: #2a3042; font-family: 'Roboto', sans-serif;">
+    <h1 class="fs-2"><i class="fa-solid fa-comments"></i> Fikir mulohaza</h1>
+    <form method="post">
+      {% csrf_token %}
+      <textarea name="comment" class="col-12 p-3 fs-4 mt-3" style="background-color: #32394e; border: #222736 solid 1px;" placeholder="Fikir bildirish"></textarea>
+      <button class="btn btn-primary p-2 fs-5 mt-3 ps-4 pe-4" type="submit">Yuborish</button>
+    </form>
+    <div class="m-5"></div>
+    {% for i in comment %}
+      <h2 class="fs-3 mt-2">{{ i.author }}</h2>
+      <p class="ps-5" style="color: #a6b0cf;">{{ i.comment }}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

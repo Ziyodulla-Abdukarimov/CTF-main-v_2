@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
-from .models import Lessons
+from .models import Lessons, LessonsComment
+#comment un
+from django.contrib import messages
+from accounts.models import Client
 
 # Create your views here.
 class LessonsListView(ListView):
@@ -8,6 +11,15 @@ class LessonsListView(ListView):
     template_name = 'lessons/lessons_list.html'
 
 
-class LessonsDetailView(DetailView):
-    model = Lessons
-    template_name = 'lessons/lessons_detail.html'
+def lesonsdetail(request, pk):
+    if request.method == 'POST':
+        comm = request.POST['comment']
+        if comm !=None:
+            LessonsComment(lessons=Lessons.objects.get(id=pk), comment=comm, author=Client.objects.get(admin = request.user.id)).save()
+        else:
+            messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
+    context = {
+        'lesson': Lessons.objects.get(id=pk),
+        'comment': Lessons.objects.filter(lessons = Lessons.objects.get(id=pk)),
+    }
+    return render(request, 'lessons/lessons_detail.html', context)
