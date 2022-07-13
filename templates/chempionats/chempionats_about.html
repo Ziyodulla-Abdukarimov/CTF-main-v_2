@@ -2,18 +2,18 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<div class="container">
+<div class="container" style="font-family: 'Roboto', sans-serif;">
     <div class="row">
         <div class="col-12 mt-5" style="background-color: #2a3042;">
-            <h1 class="pt-5 fs-3 text-white text-center" style="font-family: sans-serif;">{{ chempionats.title }}</h1>
+            <h1 class="pt-5 fs-3 text-white text-center">{{ chempionats.title }}</h1>
             <div class="ps-5">
-                <a href="{% url 'chempionats_about' chempionats.id %}" style="color: #9aa4c2; font-family: sans-serif;"><i class="text-white fa fa-info"></i> Musobqa haqida &emsp;</a>
-                <a href="{% url 'chempionats_rating' chempionats.id %}" style="color: #9aa4c2; font-family: sans-serif;"><i class="text-white fa fa-chart-line"></i> Reyting &emsp;</a>
-                <a href="{% url 'chempionats_scoreboard' chempionats.id %}" style="color: #9aa4c2; font-family: sans-serif;"><i class="text-white fa fa-users"></i> Ishtirokchilar</a>
+                <a href="{% url 'chempionats_about' chempionats.id %}" style="color: #9aa4c2;"><i class="text-white fa fa-info"></i> Musobqa haqida &emsp;</a>
+                <a href="{% url 'chempionats_rating' chempionats.id %}" style="color: #9aa4c2;"><i class="text-white fa fa-chart-line"></i> Reyting &emsp;</a>
+                <a href="{% url 'chempionats_scoreboard' chempionats.id %}" style="color: #9aa4c2;"><i class="text-white fa fa-users"></i> Ishtirokchilar</a>
             </div>
             <hr>
             {% block content1 %}
-            <div class="text-white p-5 pt-0 fs-5" style="font-family: sans-serif;">
+            <div class="text-white p-5 pt-0 fs-4">
                 <p class="pb-4">{{ chempionats.description }}</p>
                 <p class=""><i class="fa-solid fa-hourglass-clock"></i>Boshlanish vaqti: {{ chempionats.start_date }}</p>
                 <p class="mb-0 pb-0">Tugash vaqti: {{ chempionats.end_date }}</p>

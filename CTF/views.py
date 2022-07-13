@@ -50,18 +50,17 @@ def hacking(request):
 
 @login_required(login_url='login')
 def profile(request):
-    user_id = request.user.id
-    cout_solved = Journal.objects.filter(hacker=Client.objects.get(admin=user_id)).count()
-    task_solved = Journal.objects.filter(hacker=Client.objects.get(admin=user_id))
+    cout_solved = Journal.objects.filter(hacker=Client.objects.get(admin=request.user.id)).count()
+    task_solved = Journal.objects.filter(hacker=Client.objects.get(admin=request.user.id))
     try:
-        error_count = ErrorLog.objects.filter(hacker=Client.objects.get(id = user_id)).count()
+        error_count = ErrorLog.objects.filter(hacker=Client.objects.get(admin = request.user.id)).count()
     except:
         return redirect('home')
     context = {
         'cout_solved': cout_solved,
         'task_solved': task_solved,
         'error_count': error_count,
-        'client': Client.objects.filter(admin=user_id),
+        'client': Client.objects.filter(admin=request.user.id),
     }
     return render(request, 'profile.html', context)
 
