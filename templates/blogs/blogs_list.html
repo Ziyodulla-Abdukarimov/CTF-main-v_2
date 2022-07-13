@@ -7,7 +7,7 @@
         <div class="w-100 pt-2 p-3 shadow-lg"
             style="background-color: #2a3042; color:white; border: #32394e solid 1px; border-radius: 5px;">
             <h2 class="m-0 ps-4 mt-3 fs-3 text-left">{{ blog.title }}</h2>
-            <h5 class="text-left ps-3 m-2" style="color: #b1b8d0;">{{ blog.date | date }}</h5>
+            <h5 class="text-left ps-3 m-2 mt-3" style="color: #b1b8d0;">{{ blog.date | date }}</h5>
             <hr class="mt-3" style="background-color: #3eb1ff;">
             <p class="text-left p-3 fs-4" word style="color: #a6b0cf; line-height: 20px; white-space: normal;">{{ blog.body | truncatechars:200 }}</p>
             <a class="ps-3 fs-4" href="{% url 'blog_detail' blog.pk %}">Davomini o'qish ->
