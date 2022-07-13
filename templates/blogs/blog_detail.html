@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 <div class="row m-5">
   <div class="col-12" style="font-family: 'Roboto', sans-serif; background-color: #2a3042;">
     <h1 class="text-white p-5 pb-0 fs-2">{{ blog.title }}</h1>
     <hr>
     <p class="ps-5 fs-4" style="color: #a6b0cf;">{{ blog.summary }}</p>
+    <img class="col-12 p-5" src="{{ blog.photo.url }}">
     <p class="p-5 pt-0 pb-0 fs-4" style="color: #a6b0cf;">{{ blog.body }}</p>
     <div class="d-flex justify-content-between mt-5">
       <p class="fs-3 ms-5">Mualif: {{ blog.author }}</p>
