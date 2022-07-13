@@ -14,9 +14,8 @@ class BlogsListView(ListView):
 def blogdetail(request, pk):
     if request.method == 'POST':
         comm = request.POST['comment']
-        id = request.POST['id']
         if comm !=None:
-            Comment(blog=Blogs.objects.get(id=id), comment=comm, author=Client.objects.get(admin = request.user.id)).save()
+            Comment(blog=Blogs.objects.get(id=pk), comment=comm, author=Client.objects.get(admin = request.user.id)).save()
         else:
             messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
     context = {
