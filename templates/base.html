@@ -22,6 +22,9 @@
   <link rel="stylesheet" type="text/css" href="{% static 'home/lib/gritter/css/jquery.gritter.css' %}" />
   <link href="{% static 'home/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'home/css/style-responsive.css' %}" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
       .nav-collapse{
         transition-duration: 0.4s;
@@ -80,6 +83,12 @@
             </a>
           </li>
           <li class="sub-menu">
+            <a href="{% url 'blogs_list' %}">
+              <i class=" fa fa-blog"></i>
+              <span>Blog</span>
+            </a>
+          </li>
+          <li class="sub-menu">
             <a href="{% url 'profile' %}">
               <i class=" fa fa-user"></i>
               <span>Profile</span>
@@ -107,12 +116,6 @@
             <a href="{% url 'chempionats' %}">
               <i class="fa fa-trophy"></i>
               <span>Musobaqa</span>
-            </a>
-          </li>
-             <li class="sub-menu">
-            <a href="{% url 'blogs_list' %}">
-              <i class=" fa fa-bar-chart-o"></i>
-              <span>Bloglar</span>
             </a>
           </li>
         </ul>
