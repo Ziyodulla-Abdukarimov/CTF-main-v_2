@@ -15,11 +15,12 @@ def chempionats(request):
     return render(request, 'chempionats/chempionats.html', context)
 
 def chempionats_about(request, pk):
+    print(Chempionat_user.objects.filter(user=request.user.id).exists())
     if request.method == 'POST':
-        Chempionat_user(user=Client.objects.get(id=request.user.id), chempionats=Chempionats.objects.get(id=pk)).save()
+        Chempionat_user(user=Client.objects.get(admin=request.user.id), chempionats=Chempionats.objects.get(id=pk)).save()
     context = {
         'chempionats': Chempionats.objects.get(id=pk),
-        'chempionat_user': Chempionat_user.objects.filter(user=request.user.id).exists(),
+        'chempionat_user': Chempionat_user.objects.filter(user=Client.objects.get(admin=request.user.id)).exists(),
     }
     return render(request, 'chempionats/chempionats_about.html', context)
 
@@ -37,7 +38,7 @@ def chempionat_tasks_open(request, id, pk):
     if request.method == 'POST':
         flag = request.POST['flag']
         if flag == Chempionat_task.objects.get(id=pk).flag:
-            user_id = request.user.id
+            user_id = Client.objects.get(admin=request.user.id)
             if Chempionat_Journal.objects.filter(user=Chempionat_user.objects.get(user=user_id), task=Chempionat_task.objects.get(id=pk)).exists():
                 messages.success(request, "Avval yechgansiz")
             else:
@@ -49,7 +50,7 @@ def chempionat_tasks_open(request, id, pk):
             messages.error(request, "Xato javob")
     context = {
         'task': Chempionat_task.objects.filter(id=pk),
-        'test': Chempionat_Journal.objects.filter(user=Chempionat_user.objects.get(user=request.user.id), task=Chempionat_task.objects.get(id=pk)),
+        'test': Chempionat_Journal.objects.filter(user=Chempionat_user.objects.get(user=Client.objects.get(admin=request.user.id)), task=Chempionat_task.objects.get(id=pk)),
     }
     return render(request, 'chempionats/task.html', context)
 
