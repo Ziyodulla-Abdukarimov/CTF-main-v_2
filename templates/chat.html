@@ -5,7 +5,7 @@
 <div class="row m-5">
   <div class="col-12 mt-4 p-5" style="background-color: #2a3042; font-family: 'Roboto', sans-serif;">
     <h1 class="fs-2" style="color: #a6b0cf;"><i class="fa-solid fa-comments"></i> chat </h1>
-      {% for i in messages %}
+      {% for i in chat %}
         <h2 class="fs-3 mt-2">{{ i.author }}</h2>
         <p class="ps-5" style="color: #a6b0cf;">{{ i.message }}</p>
       {% endfor %}

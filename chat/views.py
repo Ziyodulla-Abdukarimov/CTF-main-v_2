@@ -13,4 +13,7 @@ def chatdetail(request):
             Chat(message=message, author=Client.objects.get(admin = request.user.id)).save()
         else:
             messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
-    return render(request, 'chat.html')
+    context = {
+        'chat':Chat.objects.all(),
+    }
+    return render(request, 'chat.html', context)
