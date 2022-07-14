@@ -5,17 +5,66 @@
 <div class="row m-5">
   <div class="col-12 mt-4 p-5" style="background-color: #2a3042; font-family: 'Roboto', sans-serif;">
     <h1 class="fs-2" style="color: #a6b0cf;"><i class="fa-solid fa-comments"></i> chat </h1>
-      {% for i in chat %}
-        <h2 class="fs-3 mt-2">{{ i.author }}</h2>
-        <p class="ps-5" style="color: #a6b0cf;">{{ i.message }}</p>
-      {% endfor %}
-      <div class="m-5"></div>
-      <form method="post">
-        {% csrf_token %}
-        <textarea name="message" class="col-12 p-3 fs-4 mt-3" style="color: #a6b0cf; background-color: #32394e; border: #222736 solid 1px;" placeholder="Fikir bildirish"></textarea>
-        <button class="btn btn-primary p-2 fs-5 mt-3 ps-4 pe-4" type="submit">Yuborish</button>
-      </form>
+    <form id="post-form">
+      {% csrf_token %}
+      <textarea id="textarea" name="message" class="col-12 p-3 fs-4 mt-3"
+        style="color: #a6b0cf; background-color: #32394e; border: #222736 solid 1px;"
+        placeholder="Fikir bildirish"></textarea>
+        <input class="btn btn-primary p-2 fs-5 mt-3 ps-4 pe-4" type="submit" value="Yuborish">
+    </form>
+
     <div class="m-5"></div>
   </div>
 </div>
+
+<div id="display" class="infinite-container">
+
+  <!-- <div class="container darker">
+    <b>Tom</b><p>Hello Everyone, How Are You Guys Doing?</p>
+    <span class="time-left">20th, April 2021</span>
+  </div> -->
+  
+</div>
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function () {
+    setInterval(function () {
+      $.ajax({
+        type: 'GET',
+        url: "/chat/getmessage",
+        success: function (response) {
+          console.log(response);
+          $("#display").empty();
+          for (var key in response.messages) {
+            var temp = "<div class='container darker infinite-item'><b>" + response.messages[key].message + "</b><p>" + response.messages[key].author + "</p><span class='time-left'>" + response.messages[key].date + "</span></div>";
+            $("#display").append(temp);
+          }
+        },
+        error: function (response) {
+          alert('An error occured')
+        }
+      });
+    }, 1000);
+  })
+
+</head>
+
+
+<script type="text/javascript">
+  $(document).on('submit', '#post-form', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/chat/send',
+      data: {
+        textarea: $('#textarea').val(),
+        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+      },
+      success: function (data) {
+        //alert(data)
+      }
+    });
+    document.getElementById('textarea').value = ''
+  });
+</script>
 {% endblock content %}

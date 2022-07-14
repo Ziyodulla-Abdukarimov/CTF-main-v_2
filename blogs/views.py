@@ -1,5 +1,6 @@
+from django.urls import reverse
 from accounts.models import Client
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView
 from .models import Blogs , Comment
 #comment un
@@ -16,6 +17,7 @@ def blogdetail(request, pk):
         comm = request.POST['comment']
         if comm !=None:
             Comment(blog=Blogs.objects.get(id=pk), comment=comm, author=Client.objects.get(admin = request.user.id)).save()
+            return redirect('blog_detail', pk=pk)
         else:
             messages.success(request, 'Comment bo\'sh bo\'lishi mumkin emas!')
     context = {
