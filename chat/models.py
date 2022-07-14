@@ -10,7 +10,7 @@ class Chat(models.Model):
     author = models.ForeignKey(Client, on_delete=models.CASCADE)
     message = models.TextField()
     class Meta:
-        ordering = ('date',)
+        ordering = ('-date',)
     def __str__(self):
         return self.message
     def get_absolute_url(self):
