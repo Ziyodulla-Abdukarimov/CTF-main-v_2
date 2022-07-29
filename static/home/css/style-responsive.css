@@ -7,7 +7,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-
     .mail-box .sm-side {
         width: 30%;
     }
@@ -80,7 +79,6 @@
 }
 
 @media (max-width: 768px) {
-
     .header {
         position: absolute;
     }
@@ -314,7 +312,6 @@
 
 
 @media (max-width: 480px) {
-
     .notify-row, .search, .dont-show , .inbox-head .sr-input, .inbox-head .sr-btn{
         display: none;
     }
@@ -328,7 +325,7 @@
     }
 
     #top_menu .nav > li, ul.top-menu > li {
-        float: right;
+        display: none;
     }
     .hidden-phone {
         display: none !important;
@@ -436,7 +433,7 @@
     }
 
     #top_menu .nav > li, ul.top-menu > li {
-        float: right;
+        display: none;
     }
 
     .hidden-phone {

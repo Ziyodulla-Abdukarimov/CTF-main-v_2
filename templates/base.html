@@ -7,13 +7,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <meta name="author" content="Ziyodulla Abdukarimov">
+  <meta name="Keywords" content="cyber-security.uz, cyber security uz, Ziyodulla, Abdukarimov, Bayroqni qo'lga oling" />
   <title>cyber-security.uz</title>
 
   <link href="{% static 'home/img/favicon.png' %}" rel="icon">
   <link href="{% static 'home/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="{% static 'home/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -25,60 +24,55 @@
 
   <!--Google font start-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-<!--Google font end-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!--Google font end-->
 
 
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <style>
-      .nav-collapse{
-        transition-duration: 0.4s;
-      }
-      .wrapper{
-        transition-duration: 0.4s;
-      }
-    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    .nav-collapse {
+      transition-duration: 0.4s;
+    }
+
+    .wrapper {
+      transition-duration: 0.4s;
+    }
+
+    .mycard:hover {
+      border-radius: 10px solid white;
+    }
+  </style>
 </head>
 
-<body style="background-color: #222736;">
+<body style="background-color: #111927;">
   <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
-    <!--header start-->
-    <header class="header" style="background-color: #2a3042; border-bottom: 1px solid #30364E;">
+    <header class="header" style="background-color: #1a2332;">
       <div class="sidebar-toggle-box">
         <div class="fa fa-bars tooltips" style="color: white;" data-placement="right"
           data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="{% url 'hacking' %}" class="logo"><b>CTF<span> Ubtuit</span></b></a>
+      <a href="{% url 'hacking' %}" class="logo"><b>cyber-<span>security.uz</span></b></a>
       <!--logo end-->
-      <div class="nav notify-row" id="top_menu">
+      <div class="top-menu">
         <!--  notification start -->
-        <ul class="nav top-menu">
-          <!-- notification dropdown end -->
-        </ul>
         <!--  notification end -->
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout"
-              style="border-color: #0086ff; font-family: Roboto,sans-serif;"
-              href="{% url 'logout' %}">Chiqish</a></li>
+          <li>
+            <a class="logout" style="background-color: #2869ff; font-family: Roboto,sans-serif;"
+              href="{% url 'logout' %}">
+              Chiqish
+            </a>
+          </li>
         </ul>
       </div>
     </header>
-    <!--header end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN SIDEBAR MENU
-        *********************************************************************************************************************************************************** -->
-    <!--sidebar start-->
     <aside style="font-family: 'Roboto', sans-serif;">
-      <div id="sidebar" class="nav-collapse" style="background-color: #2a3042; border-right: 1px solid #30364E;">
+      <div id="sidebar" class="nav-collapse" style="background-color: #111927; border-right: 2px solid #141d2b;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="{% url 'hacking' %}"><img src="{% static 'home/img/ui-sam.jpg' %}"
@@ -116,13 +110,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           </li>
           <li class="sub-menu">
             <a href="{% url 'challenges' %}">
-              <i class="fa fa-flag"></i>
-              <span>Masalalar</span>
+              <i class="fa-solid fa-bug"></i>
+              <span>Topshiriqlar</span>
             </a>
           </li>
           <li class="sub-menu">
             <a href="{% url 'lessons_list' %}">
-              <i class="fa fa-flag"></i>
+              <i class="fa-solid fa-graduation-cap"></i>
               <span>Darslar</span>
             </a>
           </li>
@@ -144,80 +138,77 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     <section id="main-content">
       <section class="wrapper">
         {% block content %}
-        <div class="row">
-          <h2 class="p-5 text-white" style="font-family: Quicksand,sans-serif;">Xush kelibsiz, {{ request.user.last_name }}</h2>
-        </div>
-        <div class="row">
-          <div class="col-12 col-sm-4 p-0 pe-sm-2">
-            <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 p-5 shadow-lg rounded"
-                style="background-color: #2a3042; color:white; border: #30364E solid 1px;">
-                <div class="p-0">
-                  <h4 class="text-white"
-                    style="font-family: Roboto,sans-serif;">
-                    <b>Ishtirokchilar</b></h4>
-                  <h2 class="text-white"><b>{{ hackers_count }}</b></h2>
-                </div>
-                <div class="ml-auto">
-                  <span class="text-white display-4"><i class="fa fa-users"></i></span>
-                </div>
-              </button></a>
-          </div>
+        <div class="row mt-5">
+          <div class="col-12 col-sm-5 p-0 pe-sm-2">
+            <!-- <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 m-0 p-0"
+                style="background-color: #1a2332; color:white; border-radius: 1em;">
+                <img class="w-100" src="{% static 'cyber.jpg' %}" style="border-radius: 1em;">
 
-          <div class="col-12 col-sm-4 p-0 ps-sm-1 pe-sm-1">
-            <a href="{% url 'challenges' %}">
-              <button class="btn d-flex justify-content-evenly w-100 p-5 shadow-lg rounded"
-                style="background-color: #2a3042; color:white; border: #30364E solid 1px;">
-                <div class="p-0">
-                  <h4 class="text-white"
-                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                    <b>Topshiriqlar</b></h4>
-                  <h2 class="text-white"><b>{{ task_count }}</b></h2>
-                </div>
-                <div class="ml-auto">
-                  <span class="text-white display-4"><i class="fa fa-check"></i></span>
-                </div>
-              </button>
-            </a>
+              </button></a> -->
+              <video class="w-100" controls>
+                <source src="{% static 'mr.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+              </video>        
           </div>
-          <div class="col-12 col-sm-4 p-0 ps-sm-2">
-            <a href="task/{{ task.id }}">
-              <button class="btn d-flex justify-content-evenly w-100 p-5 shadow-lg rounded"
-                style="background-color: #2a3042; color:white; border: #30364E solid 1px;">
-                <div class="p-0">
-                  <h4 class="text-white"
-                    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                    <b>To'plash mumkin bo'lgan ball</b></h4>
-                  <h2 class="text-white"><b>1000</b></h2>
-                </div>
-                <div class="ml-auto">
-                  <span class="text-white display-4"><i class="fa fa-check"></i></span>
-                </div>
-              </button>
-            </a>
+          <div class="col-12 col-sm-7 p-0 ps-sm-2">
+            <div class="w-100 p-5" style="background-color: #1a2332; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
+              <p class="fs-2">Cyber-Security.uz</p>
+              <p class="fs-4">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi bilimlaringizni sinovdan
+                o'tkazing. Tizimda sizga kamchiliklar beriladi siz uni topishizdan iborat.
+                Web Forensics Pwn Mobile Reversing Crypto misc turdagi topshiriqlardan iborat.
+                Shuningdek saytimizda musobaqalar o'tkazib boriladi. 
+              </p>
+            </div>
           </div>
         </div>
         <div class="row mt-5">
-          <div class="col-12" style="background-color: #2a3042;">
-            <table class="table text-white">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Familya</th>
-                  <th scope="col">Ism</th>
-                  <th scope="col">Ball</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for res in res %}
-                <tr>
-                  <th scope="row">{{ forloop.counter }}</th>
-                  <td><a href="profile/{{ res.id }}">{{ res.admin.first_name }}</a></td>
-                  <td><a href="profile/{{ res.id }}">{{ res.admin.last_name }}</a></td>
-                  <td>{{ res.point }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
+          <div class="col-12 col-sm-3 p-0 pe-sm-2">
+            <a href="{% url 'challenges' %}">
+              <button class="btn mycard d-flex justify-content-evenly w-100 p-5"
+                style="background-color: #1a2332; color:white; border-radius: 1em;">
+                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                  <p style="font-size:50px;"><i class="fa-solid fa-bug shadow-lg"></i></p>
+                  <p class="fs-4">Topshiriqlar</p>
+                  <p class="fs-5" style="color: #9fef00;">Umumiy topshiriqlar: 700 ta</p>
+                </div>
+              </button>
+            </a>
+          </div>
+          <div class="col-12 col-sm-3 p-0 pe-sm-2">
+            <a href="{% url 'lessons_list' %}">
+              <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
+                style="background-color: #1a2332; color:white; border-radius: 1em;">
+                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                  <p style="font-size:50px;"><i class="fa-solid fa-graduation-cap shadow-lg"></i></p>
+                  <p class="fs-4">Darsliklar</p>
+                  <p class="fs-5" style="color: #9fef00;">Umumiy Darsliklar: 70 ta</p>
+                </div>
+              </button>
+            </a>
+          </div>
+          <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
+            <a href="{% url 'users' %}">
+              <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
+                style="background-color: #1a2332; color:white; border-radius: 1em;">
+                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                  <p style="font-size:50px;"><i class="fa-solid fa-users shadow-lg"></i></p>
+                  <p class="fs-4">Foydalanuvchilar</p>
+                  <p class="fs-5" style="color: #9fef00;">Umumiy foydalanuvchilar: 1200 ta</p>
+                </div>
+              </button>
+            </a>
+          </div>
+          <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
+            <a href="{% url 'chempionats' %}">
+              <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
+                style="background-color: #1a2332; color:white; border-radius: 1em;">
+                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                  <p style="font-size:50px;"><i class="fa fa-trophy"></i></p>
+                  <p class="fs-4">Musobaqalar</p>
+                  <p class="fs-5" style="color: #9fef00;">O'tkazildi: 20 ta</p>
+                </div>
+              </button>
+            </a>
           </div>
         </div>
         {% endblock content %}
@@ -225,14 +216,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     </section>
     <!--main content end-->
     <!--footer start-->
-    <footer class="p-4 mt-5" style="color: white; background-color: #2a3042;">
+    <footer class="p-4 mt-5" style="color: white; background-color: #101827;">
       <div class="text-center" style="font-family: 'Roboto', sans-serif">
         <p>
           &copy; Copyrights
-          CTF Ubtuit Uz. All Rights Reserved
+          Cyber-Security.uz. All Rights Reserved
         </p>
         <div class="credits">
-          Created CTF by <a href="https://t.me/ZiyodullaAbdukarimov">Ziyodulla Abdukarimov</a>
+          Created CTF by <a href="https://t.me/ZiyodullaAbdukarimov">Sirus Group</a>
         </div>
       </div>
     </footer>

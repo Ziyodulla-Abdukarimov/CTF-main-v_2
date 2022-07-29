@@ -6,22 +6,22 @@
             {% if task.solved %}
             <div class="col-12 col-sm-3 mt-5">
                 <a href="task/{{ task.id }}">
-                    <button class="btn w-100 pt-2 p-5 shadow-lg" style="border-radius: 5px; border: #92dd12 solid 1px; background-color: #191F3A; color:white;">
+                    <button class="btn w-100 pt-2 p-5" style="border-radius: 1rem; border: #9fef00 solid 1px; background-color: #1a2332; color:white;">
                         <h2 class="m-0 mt-3 fs-3">{{ task.title }}</h2>
                         <h4 class="mt-2 fw-bold" style="color: #3ca8f3;">{{ task.point }}</h4>
                         <hr class="mb-2 mt-2 p-0">
-                        <h2 class="fs-4 m-0 pt-2" style="color: #92dd12;">Yechilgan</h2>
+                        <h2 class="fs-4 m-0 pt-2" style="color: #9fef00;">Yechilgan</h2>
                     </button>
                 </a>
             </div>
             {% else %}
             <div class="col-12 col-sm-3 mt-5">
                 <a href="task/{{ task.id }}">
-                    <button class="btn w-100 pt-2 p-5 shadow-lg" style="background-color: #191F3A; color:white; border: #ffaf00 solid 1px; border-radius: 5px;">
+                    <button class="btn w-100 pt-2 p-5" style="background-color: #1a2332; color:white; border: #ffaf00 solid 1px; border-radius: 1rem;">
                         <h2 class="m-0 mt-3 fs-3">{{ task.title }}</h2>
                         <h4 class="mt-2 fw-bold" style="color: #3ca8f3;">{{ task.point }}</h4>
                         <hr class="mb-2 mt-2 p-0">
-                        <h2 class="fs-4 m-0 pt-2" style="color: #e43a3c;">Urunib ko'ring</h2>
+                        <h2 class="fs-4 m-0 pt-2" style="color: #ff3e3e;">Urunib ko'ring</h2>
                     </button>
                 </a>
             </div>
