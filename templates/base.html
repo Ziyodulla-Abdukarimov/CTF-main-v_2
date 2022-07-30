@@ -16,7 +16,6 @@
   <link href="{% static 'home/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="{% static 'home/lib/font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/zabuto_calendar.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'home/lib/gritter/css/jquery.gritter.css' %}" />
   <link href="{% static 'home/css/style.css' %}" rel="stylesheet">
@@ -112,7 +111,7 @@
           </li>
           <li class="sub-menu">
             <a href="{% url 'scoreboard' %}">
-              <i class=" fa fa-bar-chart-o"></i>
+              <i class="fa-solid fa-chart-line"></i>
               <span>Natijalar</span>
             </a>
           </li>
@@ -136,8 +135,8 @@
           </li>
           <li class="sub-menu">
             <a href="{% url 'chempionats' %}">
-              <i class="fa fa-trophy"></i>
-              <span>About</span>
+              <i class="fa-solid fa-info"></i>
+              <span>Biz haqimizda</span>
             </a>
           </li>
         </ul>
@@ -152,7 +151,7 @@
     <section id="main-content">
       <section class="wrapper">
         {% block content %}
-        <div class="row mt-5">
+        <div class="row mt-5 m-2">
           <div class="col-12 col-sm-5 p-0 pe-sm-2">
             <!-- <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 m-0 p-0"
                 style="background-color: #1a2332; color:white; border-radius: 1em;">
@@ -177,7 +176,7 @@
             </div>
           </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5 m-2">
           <div class="col-12 col-sm-3 p-0 pe-sm-2">
             <a href="{% url 'challenges' %}">
               <button class="btn mycard d-flex justify-content-evenly w-100 p-5"

@@ -9,7 +9,9 @@
     <hr>
     <p class="ps-5 fs-4" style="color: #a6b0cf;">{{ blog.summary }}</p>
     <img class="col-12 p-5 lazyload" style="border-radius: 1rem;" src="{{ blog.photo.url }}">
-    <p class="p-5 pt-0 pb-0 fs-4" style="color: #a6b0cf;">{{ blog.body }}</p>
+    <div class="p-5 pt-0 pb-0 fs-4">
+    <p>{{ blog.body | safe }}</p>
+    </div>
     <div class="d-flex justify-content-between mt-5">
       <p class="fs-3 ms-5">Mualif: {{ blog.author }}</p>
       <p class="me-5" style="color: #a6b0cf;">{{ blog.date }}</p>

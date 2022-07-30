@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
     'lessons.apps.LessonsConfig',
     'chat.apps.ChatConfig',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [

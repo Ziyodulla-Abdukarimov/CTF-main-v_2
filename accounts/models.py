@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -71,7 +72,7 @@ class Type(models.Model):
 
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Mavzu')
-    body = models.CharField(max_length=1000, verbose_name='savol')
+    body = RichTextField()
     text = models.CharField(max_length=100, blank=True, null=True)
     link = models.CharField(max_length=500, blank=True, null=True)
     flag = models.CharField(max_length=50)
