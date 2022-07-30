@@ -31,6 +31,15 @@
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+<!-- Datatable start -->
+  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
+<!-- Datatable end -->
+
   <style>
     .nav-collapse {
       transition-duration: 0.4s;
@@ -45,7 +54,6 @@
     }
   </style>
 </head>
-
 <body style="background-color: #111927;">
   <section id="container">
     <header class="header" style="background-color: #1a2332;">
@@ -99,7 +107,7 @@
           <li class="sub-menu">
             <a href="{% url 'users' %}">
               <i class=" fa fa-users"></i>
-              <span>Ishtirokchilar</span>
+              <span>Foydalanuvchilar</span>
             </a>
           </li>
           <li class="sub-menu">
@@ -151,18 +159,20 @@
                 <img class="w-100" src="{% static 'cyber.jpg' %}" style="border-radius: 1em;">
 
               </button></a> -->
-              <video class="w-100" controls>
-                <source src="{% static 'mr.mp4' %}" type="video/mp4">
+            <video class="w-100" controls>
+              <source src="{% static 'mr.mp4' %}" type="video/mp4">
               Your browser does not support the video tag.
-              </video>        
+            </video>
           </div>
           <div class="col-12 col-sm-7 p-0 ps-sm-2">
-            <div class="w-100 p-5" style="background-color: #1a2332; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
+            <div class="w-100 p-5"
+              style="background-color: #1a2332; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
               <p class="fs-2">Cyber-Security.uz</p>
-              <p class="fs-4">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi bilimlaringizni sinovdan
+              <p class="fs-4">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi
+                bilimlaringizni sinovdan
                 o'tkazing. Tizimda sizga kamchiliklar beriladi siz uni topishizdan iborat.
                 Web Forensics Pwn Mobile Reversing Crypto misc turdagi topshiriqlardan iborat.
-                Shuningdek saytimizda musobaqalar o'tkazib boriladi. 
+                Shuningdek saytimizda musobaqalar o'tkazib boriladi.
               </p>
             </div>
           </div>
@@ -236,7 +246,7 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="{% static 'home/lib/jquery/jquery.min.js' %}"></script>
+  <!-- <script src="{% static 'home/lib/jquery/jquery.min.js' %}"></script> -->
 
   <!-- <script src="{% static 'home/lib/bootstrap/js/bootstrap.min.js' %}"></script> -->
   <script class="include" type="text/javascript" src="{% static 'home/lib/jquery.dcjqaccordion.2.7.js' %}"></script>

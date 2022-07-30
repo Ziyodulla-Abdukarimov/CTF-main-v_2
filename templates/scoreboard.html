@@ -1,31 +1,66 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-  <p class="mt-5 text-white fs-3 text-center">Natijalar</p>
+{% load static %}
+<style>
+    div.dataTables_length select {
+        color: #a4b1cd;
+        border-radius: 3px;
+        background-color: #1a2332;
+        border: 0;
+        padding: 7px;
+    }
+    .dataTables_filter input
+    {
+        background-color: #1a2332;
+        border: 0;
+        padding: 7px;
+        border-radius: 5px;
+    }
+</style>
+<div class="row mt-3 rounded">
+    <div class="col-12 " style="background-color: #131c29; border-radius: 1rem;">
+        <p class="mt-5 pt-3 text-white fs-3 text-center" style="font-family: 'Roboto', sans-serif;">Natijalar Jadvali</p>
+        <table id="example" class="table table-hover display" style="background-color: #131c29;">
+            <thead style="color: #a4b1cd;">
+                <tr>
+                    <th>#</th>
+                    <th>Familya</th>
+                    <th>Ism</th>
+                    <th>Ball</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for res in res %}
+                <tr style="border-bottom: 1px solid #1a2432;">
+                    <th style="width: 5%; color: white;">{{ forloop.counter }}</th>
+                    <td style="width: 30%">
+                        <a style="color: white; font-family: 'Roboto', sans-serif;" href="profile/{{ res.id }}"><img class="p-2" style="height: 5rem" src="{% static 'home/img/favicon.png' %}">
+                            {{ res.admin.first_name }}
+                        </a>
+                    </td>
+                    <td>
+                        <a style="color: white; font-family: 'Roboto', sans-serif;" href="profile/{{ res.id }}"><p class="pt-4">{{ res.admin.last_name }}</p></a>
+                    </td>
+                    <td class="fs-4" style="width: 20%; color: #9fef00; font-family: 'Roboto', sans-serif;">{{ res.point }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
-<div class="row mt-3">
-  <div class="col-12" style="background-color: #191F3A;">
-    <table class="table text-white rounded">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Familya</th>
-          <th scope="col">Ism</th>
-          <th scope="col">Ball</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for res in res %}
-        <tr>
-          <th scope="row">{{ forloop.counter }}</th>
-          <td><a href="profile/{{ res.id }}">{{ res.admin.first_name }}</a></td>
-          <td><a href="profile/{{ res.id }}">{{ res.admin.last_name }}</a></td>
-          <td class="fw-bold" style="font-size: 15px;">{{ res.point }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-</div>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable(
+            {
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull)
+                {
+                    $('td', nRow).css('background-color', '#131c29');
+                    $('th', nRow).css('background-color', '#131c29');
+                    $('tr', nRow).css('background-color', '#131c29');
+                }
+            }
+        );
+    });
+</script>
 {% endblock content %}
