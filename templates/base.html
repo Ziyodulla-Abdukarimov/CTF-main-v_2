@@ -49,7 +49,7 @@
     }
 
     .mycard:hover {
-      border-radius: 10px solid white;
+      text-shadow: 1px 1px 3px #9fef00, 1px 1px 3px #9fef00;
     }
   </style>
 </head>
@@ -152,37 +152,38 @@
       <section class="wrapper">
         {% block content %}
         <div class="row mt-5 m-2">
-          <div class="col-12 col-sm-5 p-0 pe-sm-2">
+          <div class="col-12 col-sm-6 p-0 pe-sm-2">
             <!-- <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 m-0 p-0"
                 style="background-color: #1a2332; color:white; border-radius: 1em;">
                 <img class="w-100" src="{% static 'cyber.jpg' %}" style="border-radius: 1em;">
 
               </button></a> -->
-            <video class="w-100" controls>
+            <video class="w-100" controls style="border-radius: 1rem;">
               <source src="{% static 'mr.mp4' %}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
-          <div class="col-12 col-sm-7 p-0 ps-sm-2">
+          <div class="col-12 col-sm-6 p-0">
             <div class="w-100 p-5"
               style="background-color: #1a2332; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
               <p class="fs-2">Cyber-Security.uz</p>
-              <p class="fs-4">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi
+              <p class="fs-4 pb-5">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi
                 bilimlaringizni sinovdan
-                o'tkazing. Tizimda sizga kamchiliklar beriladi siz uni topishizdan iborat.
+                o'tkazing. Tizimda sizga turli qiyinchilik darajasidagi topshiriqlar beriladi siz uni bajarishingiz kerak bo'ladi.
                 Web Forensics Pwn Mobile Reversing Crypto misc turdagi topshiriqlardan iborat.
                 Shuningdek saytimizda musobaqalar o'tkazib boriladi.
               </p>
+              <p class="pb-5 p-4"></p>
             </div>
           </div>
         </div>
         <div class="row mt-5 m-2">
           <div class="col-12 col-sm-3 p-0 pe-sm-2">
             <a href="{% url 'challenges' %}">
-              <button class="btn mycard d-flex justify-content-evenly w-100 p-5"
+              <button class="btn d-flex justify-content-evenly w-100 p-5"
                 style="background-color: #1a2332; color:white; border-radius: 1em;">
                 <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa-solid fa-bug shadow-lg"></i></p>
+                  <p style="font-size:50px;"><i class="fa-solid fa-bug mycard"></i></p>
                   <p class="fs-4">Topshiriqlar</p>
                   <p class="fs-5" style="color: #9fef00;">Umumiy topshiriqlar: 700 ta</p>
                 </div>
@@ -194,7 +195,7 @@
               <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
                 style="background-color: #1a2332; color:white; border-radius: 1em;">
                 <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa-solid fa-graduation-cap shadow-lg"></i></p>
+                  <p style="font-size:50px;"><i class="fa-solid fa-graduation-cap mycard"></i></p>
                   <p class="fs-4">Darsliklar</p>
                   <p class="fs-5" style="color: #9fef00;">Umumiy Darsliklar: 70 ta</p>
                 </div>
@@ -206,7 +207,7 @@
               <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
                 style="background-color: #1a2332; color:white; border-radius: 1em;">
                 <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa-solid fa-users shadow-lg"></i></p>
+                  <p style="font-size:50px;"><i class="fa-solid fa-users mycard"></i></p>
                   <p class="fs-4">Foydalanuvchilar</p>
                   <p class="fs-5" style="color: #9fef00;">Umumiy foydalanuvchilar: 1200 ta</p>
                 </div>
@@ -218,7 +219,7 @@
               <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
                 style="background-color: #1a2332; color:white; border-radius: 1em;">
                 <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa fa-trophy"></i></p>
+                  <p style="font-size:50px;"><i class="fa fa-trophy mycard"></i></p>
                   <p class="fs-4">Musobaqalar</p>
                   <p class="fs-5" style="color: #9fef00;">O'tkazildi: 20 ta</p>
                 </div>

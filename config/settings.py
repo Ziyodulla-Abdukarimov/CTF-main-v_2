@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2i96-8%-xpe)t@ew8p#t24^1e&zl!)0rh^7r@dcaa^lmgtl$8e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.3']
+ALLOWED_HOSTS = ['192.168.1.4']
 
 
 # Application definition
@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
     'lessons.apps.LessonsConfig',
     'chat.apps.ChatConfig',
-    'ckeditor'
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join('static_root')
 STATICFILES_DIRS = (os.path.join('static'),)
 
 # Default primary key field type
@@ -137,3 +139,5 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

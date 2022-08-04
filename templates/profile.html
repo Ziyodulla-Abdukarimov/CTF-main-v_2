@@ -4,56 +4,58 @@
 <div class="row d-flex justify-content-evenly mt-5 m-2">
   {% for hackers in client %}
   <div class="row p-5" style="background-color: #141d2b; border-radius: 1rem;">
-    <div class="col-2">
+    <div class="col-12 text-center">
       <img src="{% static 'home/img/ui-sam.jpg' %}" alt="" style="border-radius: 50%; height: 150px;">
     </div>
-    <div class="col-12 col-sm-5">
+    <div class="col-12 text-center">
       <h3 class="text-white mt-3">{{ hackers.admin.first_name }} {{ hackers.admin.last_name }}</h3>
-      <p class="w-50 p-2" style="font-family: 'Roboto', sans-serif; color: #9FEF00;">@{{ hackers.admin.username }}</p>
-      <p style="font-family: 'Roboto', sans-serif; color: white;">Tizimdagi o'rni: 1</p>
+      <p class="fs-3" style="font-family: 'Roboto', sans-serif; color: #9FEF00;">@{{ hackers.admin.username }}</p>
+      <p class="fs-3" style="font-family: 'Roboto', sans-serif; color: white;">Tizimdagi o'rni: 1</p>
     </div>
-    <div class="col-12 col-sm-5">
-      <p class="text-white fs-3" style="font-family: 'Roboto', sans-serif;"><i class="fa fa-trophy fs-2"></i> Umumiy bal: 4000</p>
-      <p>To'g'ri yuborishlar soni: {{ cout_solved }}</p>
-      <p>Xato yuborishlar soni: {{ error_count }}</p>
+    <div class="col-12 text-center">
+      <p class="text-white fs-4" style="font-family: 'Roboto', sans-serif;">
+        <span class="bg-primary p-2" style="border-radius: 0.5rem;">point: 4000</span>
+        <span class="bg-success p-2" style="border-radius: 0.5rem;">To'g'ri: {{ cout_solved }}</span>
+        <span class="bg-danger p-2" style="border-radius: 0.5rem;">Xato{{ error_count }}</span>
+      </p>
     </div>
     <div class="row">
       <div class="col-12 m-5" style="background-color: #141d2b;">
-          <div class="ps-5">
-              <a href="#" style="color: #a4b1cd;"><i class="fa-solid fa-bug"></i> Yechilgan Topshiriqlar&emsp;</a>
-              <a href="#" style="color: #a4b1cd;"><i class="fa-solid fa-gears"></i> Sozlamalar &emsp;</a>
-              <a href="#" style="color: #a4b1cd;"><i class="fa-solid fa-certificate"></i> Sertifikatlar</a>
-          </div>
-          <hr style="color: #1b2534;">
-          {% block content1 %}
-          <div class="col-12" style="background-color: #141d2b;">
-            <table class="table text-white">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Savol nomeri</th>
-                    <th scope="col">Savol mavzusi</th>
-                    <th scope="col">Ishlangan vaqti</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for task_solved in task_solved %}
-                  <tr>
-                    <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{ task_solved.task.id }}</td>
-                    <td>{{ task_solved.task.title }}</td>
-                    <td>{{ task_solved.date }}</td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          {% endblock content1 %}
+        <div class="ps-5">
+          <a href="#" style="color: #a4b1cd;"><i class="fa-solid fa-bug"></i> Yechilgan Topshiriqlar&emsp;</a>
+          <a href="#" style="color: #a4b1cd;"><i class="fa-solid fa-gears"></i> Sozlamalar &emsp;</a>
+          <a href="#" style="color: #a4b1cd;"><i class="fa-solid fa-certificate"></i> Sertifikatlar</a>
+        </div>
+        <hr style="color: #1b2534;">
+        {% block content1 %}
+        <div class="col-12" style="background-color: #141d2b;">
+          <table class="table text-white">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Savol nomeri</th>
+                <th scope="col">Savol mavzusi</th>
+                <th scope="col">Ishlangan vaqti</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for task_solved in task_solved %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ task_solved.task.id }}</td>
+                <td>{{ task_solved.task.title }}</td>
+                <td>{{ task_solved.date }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% endblock content1 %}
       </div>
-  </div>
+    </div>
   </div>
   {% endfor %}
-  </div>
-  </div>
+</div>
+</div>
 </div>
 {% endblock content %}
