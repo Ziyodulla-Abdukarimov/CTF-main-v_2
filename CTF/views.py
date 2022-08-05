@@ -66,6 +66,19 @@ def profile(request):
 
 
 @login_required(login_url='login')
+def hackers(request, id):
+    hackers = Client.objects.filter(id=id)
+    context = {
+        'hackers': hackers,
+        'cout_solved': Journal.objects.filter(hacker=Client.objects.get(admin=request.user.id)).count(),
+        'error_count': ErrorLog.objects.filter(hacker=Client.objects.get(admin = request.user.id)).count(),
+        'task_solved': Journal.objects.filter(hacker=Client.objects.get(admin=request.user.id)),
+    }
+    return render(request, 'hackers.html', context)
+
+
+
+@login_required(login_url='login')
 def settings(request):
     return render(request, 'settings.html')
 
@@ -106,15 +119,6 @@ def scoreboard(request):
         'res': res,
     }
     return render(request, 'scoreboard.html', context)
-
-
-@login_required(login_url='login')
-def hackers(request, id):
-    hackers = Client.objects.filter(id=id)
-    context = {
-        'hackers': hackers,
-    }
-    return render(request, 'hackers.html', context)
 
 
 @login_required(login_url='login')
