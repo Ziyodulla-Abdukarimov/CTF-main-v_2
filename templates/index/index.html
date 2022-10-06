@@ -2,330 +2,65 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Ushbu platforma sizning kiberxavfsizlik qobiliyatingizni sinab ko'rishga va kiberxavfsizlik sohasida boshqa odamlar bilan fikr va usullarni almashishga yordam beradi." name="description">
-    <meta content="Sirius" name="Ziyodulla">
-    <meta name="Keywords" content="cyber-security.uz, cyber security uz, Ziyodulla, Abdukarimov, Bayroqni qo'lga oling" />
-    <link rel="shortcut icon" href="themes/default-home/assets/images/ks-icon.png">
-    <link rel="icon" href="themes/default-home/ks-icon.png" type="image/x-icon" />
-    <title>cyber-security.uz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,400i,500,700|Titillium+Web:600" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'index/https _kshackzone.com_themes_default-home_dist_css_style.css' %}">
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <style>
-        .statistic-section {
-            padding-top: 70px;
-            padding-bottom: 70px;
-            background: #00c6ff;
-            background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
-            background: linear-gradient(to right, #0072ff, #00c6ff);
-        }
-
-        .count-title {
-            font-size: 50px;
-            font-weight: normal;
-            margin-top: 10px;
-            margin-bottom: 0;
-            text-align: center;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .stats-text {
-            font-size: 15px;
-            font-weight: normal;
-            margin-top: 15px;
-            margin-bottom: 0;
-            text-align: center;
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .stats-line-black {
-            margin: 12px auto 0;
-            width: 55px;
-            height: 2px;
-            background-color: #fff;
-        }
-
-        .stats-icon {
-            font-size: 35px;
-            margin: 0 auto;
-            float: none;
-            display: table;
-            color: #fff;
-        }
-
-        @media (max-width: 992px) {
-            .counter {
-                margin-bottom: 40px;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Security.Uz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="{% static 'index/particles/app.js' %}"></script>
 </head>
-
-<body class="is-boxed">
-    <div class="body-wrap boxed-container">
-        <header class="site-header">
-            <div class="container">
-                <div class="site-header-inner">
-                    <div class="brand header-brand">
-                        <h1 class="m-0">
-                            <svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            </svg>
-                        </h1>
+<link rel="stylesheet" href="{% static 'index/css/style.css' %}">
+<body>
+    <div id="particles-js"></div>
+    <div class="container" id="wrapper">
+        <div class="row">
+            <div class="col-12 col-sm-6 text-white">
+                <h1 style="margin-top: 30%;" class="text-center line-1 anim-typewriter">CYBER-SECURITY.UZ</h1>
+                <div class="col-12 d-flex justify-content-evenly">
+                    <div class="col-5">
+                        <a href="{% url 'client_add' %}">
+                            <button class="bt text-white mt-5 w-100">HISOB YARATISH</button>
+                        </a>
+                    </div>
+                    <div class="col-5 p-0 m-0">
+                        <a href="{% url 'login' %}">
+                            <button class="bt mt-5 w-100">KIRISH</button>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </header>
-
-        <main>
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-inner">
-                        <div class="hero-copy">
-                            <h3 class="hero-title mt-0 is-revealing">Cyber-security.uz ga xush kelibsiz!</h3>
-                            <p class="hero-paragraph is-revealing">
-                            <div align="justify">
-                                Bu<span style="color: #4A59FF; font-weight: 800;"> Sirius </span> jamoasi tomonidan yaratilgan onlayn platforma.
-                                Ushbu platforma sizning xakerlik qobiliyatingizni sinab ko'rish va almashish uchun yordam beradi
-                                kiberxavfsizlik sohasida boshqa odamlar bilan g'oyalar va usullar almashining.                            </div>
-                            </p>
-                            <div class="hero-form field field-grouped is-revealing">
-                                <div class="control">
-                                    <a class="button button-primary button-block" href="{% url 'client_add' %}">Hisob yaratish</a>
-                                </div>
-                                <div class="control">
-                                    <a class="button button-primary button-block" href="{% url 'login' %}">Kirish</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hero-illustration">
-                            <div class="hero-bg">
-                                <img src="{% static 'index/neon-ks-logo.png' %}" />
-                            </div>
-
-                            <div class="hero-square hero-square-2 is-moving-object is-rotating">
-                                <svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="square-2-a">
-                                            <stop stop-color="#4353FF" offset="0%" />
-                                            <stop stop-color="#4353FF" stop-opacity=".32" offset="100%" />
-                                        </linearGradient>
-                                        <linearGradient x1="-31.43%" y1="104.265%" x2="143.71%" y2="43.581%" id="square-2-b">
-                                            <stop stop-color="#43F1FF" stop-opacity=".24" offset="0%" />
-                                            <stop stop-color="#43F1FF" stop-opacity=".16" offset="100%" />
-                                        </linearGradient>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <path fill="url(#square-2-a)" d="M0 0h88v88H0z" />
-                                        <path d="M19.717 36.579C13.824 33.969 7.004 32.555 0 31.535V0h88v88H76.869C59.773 67.766 40.697 45.872 19.717 36.579z" fill="url(#square-2-b)" />
-                                    </g>
-                                </svg>
-                            </div>
-
-
-                            <div class="hero-square hero-square-5 is-moving-object is-rotating">
-                                <svg width="141" height="140" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="square-5-a">
-                                            <stop stop-color="#4353FF" offset="0%" />
-                                            <stop stop-color="#4353FF" stop-opacity=".32" offset="100%" />
-                                        </linearGradient>
-                                        <linearGradient x1="27.288%" y1="50%" x2="172.696%" y2="-8.701%" id="square-5-b">
-                                            <stop stop-color="#43F1FF" stop-opacity=".24" offset="0%" />
-                                            <stop stop-color="#43F1FF" stop-opacity=".16" offset="100%" />
-                                        </linearGradient>
-                                        <linearGradient x1="18.74%" y1="17.384%" x2="96.787%" y2="88.669%" id="square-5-c">
-                                            <stop stop-color="#43F1FF" stop-opacity="0" offset="0%" />
-                                            <stop stop-color="#43F1FF" offset="53.489%" />
-                                            <stop stop-color="#43F1FF" stop-opacity="0" offset="100%" />
-                                        </linearGradient>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <path opacity=".24" fill="url(#square-5-a)" d="M19 18h128v128H19z" transform="translate(-6 -6)" />
-                                        <path d="M147 76.088V18h-35.004c-4.63 24.206-16.838 55.057-44.819 79.224-63.217 54.6 46.59-21.136 79.823-21.136z" opacity=".24" fill="url(#square-5-b)" transform="translate(-6 -6)" />
-                                        <path d="M0 0l39.459 40.249" stroke="url(#square-5-c)" stroke-width="3" transform="translate(-6 -6)" />
-                                    </g>
-                                </svg>
-                            </div>
-
-                            <div class="hero-dots hero-dots-1 is-moving-object is-translating" data-translating-factor="160">
-                                <svg width="279" height="97" xmlns="http://www.w3.org/2000/svg">
-                                    <g fill="#43F1FF" fill-rule="evenodd">
-                                        <path d="M71.686 0l-2.899 1.334L68 4.157l.926 2.688L71.686 8l2.6-1.31L76 4.156l-1.295-2.94z" />
-                                        <path fill-opacity=".64" d="M38.843 2l-1.45.667L37 4.079l.463 1.344 1.38.577 1.3-.655L41 4.079l-.648-1.47z" />
-                                        <path fill-opacity=".24" d="M65.843 55l-1.45.667L64 57.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".64" d="M94.765 29l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                                        <path fill-opacity=".8" d="M58.765 25l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                                        <path fill-opacity=".48" d="M18.843 44l-1.45.667L17 46.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".64" d="M8.843 29l-1.45.667L7 31.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".48" d="M32.843 29l-1.45.667L31 31.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47zM.922 45l-.725.333L0 46.04l.232.672.69.289.65-.328L2 46.04l-.324-.735z" />
-                                        <path fill-opacity=".24" d="M267.843 93l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".8" d="M275.765 75l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                                        <path fill-opacity=".48" d="M259.843 78l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="hero-dots hero-dots-2 is-moving-object is-translating" data-translating-factor="120">
-                                <svg width="138" height="132" xmlns="http://www.w3.org/2000/svg">
-                                    <g fill="#43F1FF" fill-rule="evenodd">
-                                        <path d="M73.686 66l-2.899 1.334L70 70.157l.926 2.688L73.686 74l2.6-1.31L78 70.156l-1.295-2.94z" />
-                                        <path fill-opacity=".64" d="M108.843 0l-1.45.667L107 2.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".24" d="M135.843 53l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".64" d="M107.765 53l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                                        <path fill-opacity=".8" d="M128.765 23l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                                        <path fill-opacity=".48" d="M88.843 42l-1.45.667L87 44.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".64" d="M78.843 27l-1.45.667L77 29.079l.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".48" d="M102.843 27l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47zM70.922 43l-.725.333-.197.706.232.672.69.289.65-.328.428-.633-.324-.735z" />
-                                        <path d="M2.765 126L.59 127 0 129.118l.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                                        <path fill-opacity=".64" d="M24.843 127l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                                        <path fill-opacity=".48" d="M6.922 114l-.725.333-.197.706.232.672.69.289.65-.328.428-.633-.324-.735z" />
-                                    </g>
-                                </svg>
-                            </div>
-
-                            <div class="hero-line hero-line-1">
-                                <svg width="344" height="217" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient x1="18.74%" y1="17.384%" x2="96.787%" y2="88.669%" id="line-1-a">
-                                            <stop stop-color="#5D6AFF" stop-opacity="0" offset="0%" />
-                                            <stop stop-color="#5D6AFF" offset="53.489%" />
-                                            <stop stop-color="#5D6AFF" stop-opacity="0" offset="100%" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M340.86 180.664l2.281 3.287c-79.796 55.378-120.994 39.511-120.994-47.035 0-82.777-47.283-92.246-144.735-27.901-32.607 20.428-55.391 21.53-67.544 2.516C-1.882 93.147-3.092 56.053 5.987 0l3.948.64c-8.928 55.125-7.743 91.453 3.303 108.736 10.644 16.653 31.058 15.666 62.01-3.725 99.65-65.797 150.9-55.534 150.9 31.265 0 83.03 37.371 97.424 114.713 43.748z" fill="url(#line-1-a)" fill-rule="nonzero" transform="matrix(-1 0 0 1 343.141 0)" />
-                                </svg>
-                            </div>
-                        </div>
+                <div class="col-12 mt-5">
+                    <div class="col-12 p-5 d-flex pb-0 justify-content-start">
+                        <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                            <g fill-rule="nonzero" fill="none">
+                                <path d="M4 12H0V5a5.006 5.006 0 0 1 5-5h7v4H5a1 1 0 0 0-1 1v7z" fill="#43F1FF" />
+                                <path d="M32 12h-4V5a1 1 0 0 0-1-1h-7V0h7a5.006 5.006 0 0 1 5 5v7zM12 32H5a5.006 5.006 0 0 1-5-5v-7h4v7a1 1 0 0 0 1 1h7v4z" fill="#4353FF" />
+                                <path d="M27 32h-7v-4h7a1 1 0 0 0 1-1v-7h4v7a5.006 5.006 0 0 1-5 5z" fill="#43F1FF" />
+                            </g>
+                        </svg>
+                        <h3 class="ps-1">Homiylar</h3>
                     </div>
-                </div>
-            </section>
-
-            <section class="features section">
-                <div class="container">
-                    <div class="features-inner section-inner">
-                        <div class="features-wrap">
-                            <div class="feature">
-                                <div class="feature-inner">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="row text-center">
-                                                    <div class="col-xs-12 col-md-3">
-                                                        <table>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="counter">
-                                                                        <i class="fa fa-users fa-2x stats-icon"></i>
-                                                                        <h2 class="timer count-title count-number">{{ hackers_count }}</h2>
-                                                                        <div class="stats-line-black"></div>
-                                                                        <p class="stats-text">Ro'yxatdan o'tgan foydalanuvchilar</p>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="counter">
-                                                                        <i class="fa fa-bug fa-2x stats-icon"></i>
-                                                                        <h2 class="timer count-title count-number">{{ task_count }}</h2>
-                                                                        <div class="stats-line-black"></div>
-                                                                        <p class="stats-text">Topshiriqlar</p>
-                                                                    </div>
-                                                                </td>
-
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            </section>
-            <div style="margin: -100px;"></div>
-            <section class="features section">
-                <div class="container">
-                    <div class="features-inner section-inner">
-                        <div class="features-wrap">
-                            <div class="feature">
-                                <div class="feature-inner">
-                                    <div class="feature-header mb-16">
-                                        <div class="feature-icon mr-16">
-                                            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                                                <g fill-rule="nonzero" fill="none">
-                                                    <path d="M4 12H0V5a5.006 5.006 0 0 1 5-5h7v4H5a1 1 0 0 0-1 1v7z" fill="#43F1FF" />
-                                                    <path d="M32 12h-4V5a1 1 0 0 0-1-1h-7V0h7a5.006 5.006 0 0 1 5 5v7zM12 32H5a5.006 5.006 0 0 1-5-5v-7h4v7a1 1 0 0 0 1 1h7v4z" fill="#4353FF" />
-                                                    <path d="M27 32h-7v-4h7a1 1 0 0 0 1-1v-7h4v7a5.006 5.006 0 0 1-5 5z" fill="#43F1FF" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <h4 class="feature-title m-0">Homiylar</h4>
-                                    </div>
-                                    <p class="text-sm mb-0"><table>
-                                        <tr>
-                                            <td>
-                                                <a href="https://a1tech.uz/" target="_blank" rel="nofollow"><img src="{% static './homiy/logo.PNG' %}" height="25" width="170" /></a>
-                                            </td>
-                                        </tr>
-                                    </table></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="site-footer">
-            <div class="footer-bg">
-                <svg width="385" height="305" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient x1="50%" y1="34.994%" x2="50%" y2="97.738%" id="footer-bg">
-                            <stop stop-color="#151616" offset="0%" />
-                            <stop stop-color="#222424" offset="100%" />
-                        </linearGradient>
-                    </defs>
-                    <path d="M384.557 116.012V305H0L210.643 0l173.914 116.012z" fill="url(#footer-bg)" fill-rule="evenodd" />
-                </svg>
-            </div>
-            <div class="footer-dots is-moving-object is-translating" data-translating-factor="160">
-                <svg width="69" height="91" xmlns="http://www.w3.org/2000/svg">
-                    <g fill="#43F1FF" fill-rule="evenodd">
-                        <path d="M37.105 41.007l-2.9 1.334-.786 2.823.926 2.689 2.76 1.154 2.6-1.31 1.714-2.533-1.296-2.94z" />
-                        <path fill-opacity=".64" d="M63.109 27.24l-1.45.666-.394 1.412.464 1.344 1.38.577 1.3-.655.856-1.266-.647-1.47z" />
-                        <path fill-opacity=".24" d="M66.226 86.638l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                        <path fill-opacity=".64" d="M13.497 43.713l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z" />
-                        <path fill-opacity=".8" d="M59.076 56.658l-2.175 1-.59 2.117.695 2.017 2.07.866 1.949-.983 1.286-1.9-.972-2.204z" />
-                        <path fill-opacity=".48" d="M22.262 18.49l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                        <path fill-opacity=".64" d="M23.422.5l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z" />
-                        <path fill-opacity=".48" d="M2.637 12.5l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47zM36.563 10.856l-.725.334-.197.706.232.672.69.288.65-.327.428-.633-.324-.735z" />
-                    </g>
-                </svg>
-            </div>
-            <div class="container">
-                <div class="site-footer-inner has-top-divider">
-                    <div class="footer-copyright">&copy;2022 Sirius group, barcha huquqlar himoyalangan.</div>
-                    <ul class="footer-social-links list-reset">
-                        <li>
-                            Server vaqti 20-may, 2022-yil 01:13:34                        </li>
-                        <li>
-                            <a href="https://t.me/cyber_securityuz" target="_blank">
-                                <span class="screen-reader-text">Telegram</span>
-                                <i class="fa-brands fa-telegram"></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <a href="https://a1tech.uz/" target="_blank">
+                        <img class="ps-5 mt-2" src="{% static 'index/img/logo.PNG' %}" width="40%">
+                    </a>
+                    <hr class="w-50">
                 </div>
             </div>
-        </footer>
+            <div class="col-sm-2"></div>
+            <div class="col-12 col-sm-4 d-flex justify-content-center mt-5 text-center">
+                <img class="m-5" src="{% static 'index/img/logolastv.svg' %}" alt="">
+            </div>
+        </div>
     </div>
-
-    <script src="{% static 'index/https _kshackzone.com_themes_default-home_dist_js_main.min.js' %}"></script>
 </body>
 
+<script src="{% static 'index/particles/particles.js' %}"></script>
+<script>
+    particlesJS.load('particles-js', 'particles.json',
+    function(){
+        console.log('particles.json loaded...');
+    })
+</script>
 </html>

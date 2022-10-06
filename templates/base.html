@@ -32,12 +32,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
-<!-- Datatable start -->
-  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
-  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
-  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
-<!-- Datatable end -->
+  <!-- Datatable start -->
+  <link rel="stylesheet" type="text/css"
+    href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+  <script type="text/javascript" charset="utf8"
+    src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" charset="utf8"
+    src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
+  <!-- Datatable end -->
 
   <style>
     .nav-collapse {
@@ -48,14 +52,14 @@
       transition-duration: 0.4s;
     }
 
-    .mycard:hover {
-      text-shadow: 1px 1px 3px #9fef00, 1px 1px 3px #9fef00;
-    }
+    /* .mycard:hover {
+    } */
   </style>
 </head>
-<body style="background-color: #111927;">
+
+<body style="background-color: #222736;">
   <section id="container">
-    <header class="header" style="background-color: #1a2332;">
+    <header class="header" style="background-color: #292f40;">
       <div class="sidebar-toggle-box">
         <div class="fa fa-bars tooltips" style="color: white;" data-placement="right"
           data-original-title="Toggle Navigation"></div>
@@ -70,7 +74,7 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           <li>
-            <a class="logout" style="background-color: #2869ff; font-family: Roboto,sans-serif;"
+            <a class="logout" style="background-color: #4353ff; font-family: Roboto,sans-serif;"
               href="{% url 'logout' %}">
               Chiqish
             </a>
@@ -79,7 +83,7 @@
       </div>
     </header>
     <aside style="font-family: 'Roboto', sans-serif;">
-      <div id="sidebar" class="nav-collapse" style="background-color: #111927; border-right: 2px solid #141d2b;">
+      <div id="sidebar" class="nav-collapse" style="background-color: #292f40;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="{% url 'hacking' %}"><img src="{% static 'home/img/ui-sam.jpg' %}"
@@ -110,15 +114,15 @@
             </a>
           </li>
           <li class="sub-menu">
-            <a href="{% url 'scoreboard' %}">
-              <i class="fa-solid fa-chart-line"></i>
-              <span>Natijalar</span>
-            </a>
-          </li>
-          <li class="sub-menu">
             <a href="{% url 'challenges' %}">
               <i class="fa-solid fa-bug"></i>
               <span>Topshiriqlar</span>
+            </a>
+          </li>
+          <li class="sub-menu">
+            <a href="{% url 'scoreboard' %}">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Natijalar</span>
             </a>
           </li>
           <li class="sub-menu">
@@ -148,83 +152,87 @@
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
+
     <section id="main-content">
       <section class="wrapper">
         {% block content %}
-        <div class="row mt-5 m-2">
-          <div class="col-12 col-sm-6 p-0 pe-sm-2">
-            <!-- <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 m-0 p-0"
-                style="background-color: #1a2332; color:white; border-radius: 1em;">
-                <img class="w-100" src="{% static 'cyber.jpg' %}" style="border-radius: 1em;">
+        <div class="row">
+          <div class="row mt-4 ms-2">
+            <div class="col-12 col-sm-6 p-0 pe-sm-2">
+              <!-- <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 m-0 p-0"
+                  style="background-color: #1a2332; color:white; border-radius: 1em;">
+                  <img class="w-100" src="{% static 'cyber.jpg' %}" style="border-radius: 1em;">
 
-              </button></a> -->
-            <video class="w-100" controls style="border-radius: 1rem;">
-              <source src="{% static 'mr.mp4' %}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col-12 col-sm-6 p-0">
-            <div class="w-100 p-5"
-              style="background-color: #1a2332; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
-              <p class="fs-2">Cyber-Security.uz</p>
-              <p class="fs-4 pb-5">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi
-                bilimlaringizni sinovdan
-                o'tkazing. Tizimda sizga turli qiyinchilik darajasidagi topshiriqlar beriladi siz uni bajarishingiz kerak bo'ladi.
-                Web Forensics Pwn Mobile Reversing Crypto misc turdagi topshiriqlardan iborat.
-                Shuningdek saytimizda musobaqalar o'tkazib boriladi.
-              </p>
-              <p class="pb-5 p-4"></p>
+                </button></a> -->
+              <video class="w-100 h-100" controls style="border-radius: 1rem;">
+                <source src="{% static 'mr.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="col-12 col-sm-6 p-0">
+              <div class="w-100 p-5 h-100"
+                style="background-color: #292f40; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
+                <p class="fs-2">Cyber-Security.uz</p>
+                <p class="fs-4 pb-5">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi
+                  bilimlaringizni sinovdan
+                  o'tkazing. Tizimda sizga turli qiyinchilik darajasidagi topshiriqlar beriladi siz uni bajarishingiz
+                  kerak bo'ladi.
+                  Web Forensics Pwn Mobile Reversing Crypto misc turdagi topshiriqlardan iborat.
+                  Shuningdek saytimizda musobaqalar o'tkazib boriladi.
+                </p>
+                <p class="pb-5 p-4"></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row mt-5 m-2">
-          <div class="col-12 col-sm-3 p-0 pe-sm-2">
-            <a href="{% url 'challenges' %}">
-              <button class="btn d-flex justify-content-evenly w-100 p-5"
-                style="background-color: #1a2332; color:white; border-radius: 1em;">
-                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa-solid fa-bug mycard"></i></p>
-                  <p class="fs-4">Topshiriqlar</p>
-                  <p class="fs-5" style="color: #9fef00;">Umumiy topshiriqlar: 700 ta</p>
-                </div>
-              </button>
-            </a>
-          </div>
-          <div class="col-12 col-sm-3 p-0 pe-sm-2">
-            <a href="{% url 'lessons_list' %}">
-              <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
-                style="background-color: #1a2332; color:white; border-radius: 1em;">
-                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa-solid fa-graduation-cap mycard"></i></p>
-                  <p class="fs-4">Darsliklar</p>
-                  <p class="fs-5" style="color: #9fef00;">Umumiy Darsliklar: 70 ta</p>
-                </div>
-              </button>
-            </a>
-          </div>
-          <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
-            <a href="{% url 'users' %}">
-              <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
-                style="background-color: #1a2332; color:white; border-radius: 1em;">
-                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa-solid fa-users mycard"></i></p>
-                  <p class="fs-4">Foydalanuvchilar</p>
-                  <p class="fs-5" style="color: #9fef00;">Umumiy foydalanuvchilar: 1200 ta</p>
-                </div>
-              </button>
-            </a>
-          </div>
-          <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
-            <a href="{% url 'chempionats' %}">
-              <button class="btn d-flex justify-content-evenly w-100 m-0 p-5"
-                style="background-color: #1a2332; color:white; border-radius: 1em;">
-                <div class="col-12" style="font-family: 'Roboto', sans-serif;">
-                  <p style="font-size:50px;"><i class="fa fa-trophy mycard"></i></p>
-                  <p class="fs-4">Musobaqalar</p>
-                  <p class="fs-5" style="color: #9fef00;">O'tkazildi: 20 ta</p>
-                </div>
-              </button>
-            </a>
+          <div class="row mt-4 ms-2">
+            <div class="col-12 col-sm-3 p-0 pe-sm-2">
+              <a href="{% url 'challenges' %}">
+                <button class="btn my_home_btn w-100 p-5"
+                  style="background-color: #292f40; color:white; border-radius: 1em;">
+                  <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                    <p style="font-size:50px;"><i class="fa-solid fa-bug mycard"></i></p>
+                    <p class="fs-4">Topshiriqlar</p>
+                    <p class="fs-5" style="color: #9fef00;">Umumiy topshiriqlar: 700 ta</p>
+                  </div>
+                </button>
+              </a>
+            </div>
+            <div class="col-12 col-sm-3 p-0 pe-sm-2">
+              <a href="{% url 'lessons_list' %}">
+                <button class="btn w-100 m-0 p-5"
+                  style="background-color: #292f40; color:white; border-radius: 1em;">
+                  <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                    <p style="font-size:50px;"><i class="fa-solid fa-graduation-cap mycard"></i></p>
+                    <p class="fs-4">Darsliklar</p>
+                    <p class="fs-5" style="color: #9fef00;">Umumiy Darsliklar: 70 ta</p>
+                  </div>
+                </button>
+              </a>
+            </div>
+            <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
+              <a href="{% url 'users' %}">
+                <button class="btn w-100 m-0 p-5"
+                  style="background-color: #292f40; color:white; border-radius: 1em;">
+                  <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                    <p style="font-size:50px;"><i class="fa-solid fa-users mycard"></i></p>
+                    <p class="fs-4">Foydalanuvchilar</p>
+                    <p class="fs-5" style="color: #9fef00;">Umumiy foydalanuvchilar: 1200 ta</p>
+                  </div>
+                </button>
+              </a>
+            </div>
+            <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
+              <a href="{% url 'chempionats' %}">
+                <button class="btn w-100 m-0 p-5"
+                  style="background-color: #292f40; color:white; border-radius: 1em;">
+                  <div class="col-12" style="font-family: 'Roboto', sans-serif;">
+                    <p style="font-size:50px;"><i class="fa fa-trophy mycard"></i></p>
+                    <p class="fs-4">Musobaqalar</p>
+                    <p class="fs-5" style="color: #9fef00;">O'tkazildi: 20 ta</p>
+                  </div>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
         {% endblock content %}
@@ -232,17 +240,6 @@
     </section>
     <!--main content end-->
     <!--footer start-->
-    <footer class="p-4 mt-5" style="color: white; background-color: #101827;">
-      <div class="text-center" style="font-family: 'Roboto', sans-serif">
-        <p>
-          &copy; Copyrights
-          Cyber-Security.uz. All Rights Reserved
-        </p>
-        <div class="credits">
-          Created CTF by <a href="https://t.me/ZiyodullaAbdukarimov">Sirus Group</a>
-        </div>
-      </div>
-    </footer>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->

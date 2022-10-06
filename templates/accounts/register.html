@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-{% load static %}
+{% load  static %}
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Ziyodulla Abdukarimov">
-    <meta name="Keywords" content="cyber-security.uz, cyber security uz, Ziyodulla, Abdukarimov, Bayroqni qo'lga oling" />
-    <title>cyber-security.uz</title>
+    <title>CYBER-SECURITY.UZ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'index/css/style.css' %}">
+
     <link rel="icon" href="themes/default-home/ks-icon.png" type="image/x-icon" />
     <link href="{% static 'login/themes/default/assets/css/icons.css' %}" rel="stylesheet">
     <link href="{% static 'login/https _kshackzone.com_themes_default_assets_plugins_sidebar_sidebar.css' %}"
@@ -20,80 +21,74 @@
     <link href="{% static 'login/style-dark.css' %}" rel="stylesheet">
     <link href="{% static 'login/css_animate.css' %}" rel="stylesheet">
 
+
+    <script src="{% static 'index/particles/app.js' %}"></script>
 </head>
-
 <body class="main-body dark-theme">
-    <div class="page">
-        <div class="my-auto page page-h">
-            <div class="main-signin-wrapper">
+<div id="particles-js"></div>
+<div class="page" id="wrapper">
+    <div class="my-auto page page-h">
+        <div class="main-signin-wrapper">
 
-                <div class="main-card-signin d-md-flex wd-100p">
-                    <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white">
-                        <div class="my-auto authentication-pages">
-                            <div>
-                                <img src="{% static 'login/neon-ks-logo.png' %}" class=" m-0 mb-4" alt="logo">
-                                <div align="center">
-                                    <h5 class="mb-4">Cyber-Security.uz ga xush kelibsiz!</h5>
-                                    <p class="mb-5"> Tizimga kiring va buzishni boshlang. </p>
-                                </div>
-
+            <div class="main-card-signin d-md-flex wd-100p">
+                <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white">
+                    <div class="my-auto authentication-pages">
+                        <div>
+                            <img src="{% static 'login/neon-ks-logo.png' %}" class=" m-0 mb-4" alt="logo">
+                            <div align="center">
+                                <h5 class="mb-4">CYBER-SECURITY.UZ</h5>
+                                <p class="mb-5"> Tizimga kiring va buzishni boshlang. </p>
                             </div>
+
                         </div>
                     </div>
-                    <div class="p-5 wd-md-50p">
-                        <div align="center">
+                </div>
+                <div class="p-5 wd-md-50p">
+                    <div align="center">
 
-                            <a href="{% url 'home' %}" class="btn btn-info">Bosh sahifa</a>
-                        </div><br>
+                        <a href="{% url 'home' %}" class="btn btn-main-primary">Bosh sahifa</a>
+                    </div><br>
 
-                        <div class="main-signin-header">
-                            <form method="POST">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <input class="form-control" name="first_name" placeholder="Familya" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="last_name" placeholder="Ism" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="username"
-                                        placeholder="Foydalanuvchi nomingizni kiriting" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="email"
-                                        placeholder="Email" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="password1" placeholder="Parolingizni kiriting"
-                                        type="password">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="password2" placeholder="Parolingizni tasdiqlang"
-                                        type="password">
-                                </div>
-                                <button class="btn btn-main-primary btn-block">Ro'yhatdan o'tish</button>
-                            </form>
-                        </div>
-                        {% for m in messages %}
-                        <div class="main-signin-footer mt-3 mg-t-5">
-                            <p class="text-center p-1 bg-danger text-white rounded">{{ m }}</p>
-                        </div>
-                        {% endfor %}
+                    <div class="main-signin-header">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input class="form-control" name="first_name" placeholder="Familya" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="last_name" placeholder="Ism" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="username"
+                                    placeholder="Foydalanuvchi nomingizni kiriting" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="email"
+                                    placeholder="Email" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="password1" placeholder="Parolingizni kiriting"
+                                    type="password">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="password2" placeholder="Parolingizni tasdiqlang"
+                                    type="password">
+                            </div>
+                            <button class="btn btn-main-primary btn-block">Ro'yhatdan o'tish</button>
+                        </form>
                     </div>
+
+                    <!-- Parol xato bolsa chiqadi -->
+                    <!-- {% for m in messages %}
+                    <div class="main-signin-footer mt-3 mg-t-5">
+                        <p class="text-center p-1 bg-danger text-white rounded">{{ m }}</p>
+                    </div>
+                    {% endfor %} -->
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="jquery_jquery.min.js"></script>
-    <script src="bootstrap_js_bootstrap.bundle.min.js"></script>
-    <script src="ionicons_ionicons.js"></script>
-    <script src="moment_moment.js"></script>
-    <script src="themes/default/assets/js/eva-icons.min.js"></script>
-    <script src="themes/default/assets/plugins/rating/jquery.rating-stars.js"></script>
-    <script src="themes/default/assets/plugins/rating/jquery.barrating.js"></script>
-    <script src="themes/default/assets/js/custom.js"></script>
-
+</div>
 </body>
-
+<script src="{% static 'index/particles/particles.js' %}"></script>
 </html>

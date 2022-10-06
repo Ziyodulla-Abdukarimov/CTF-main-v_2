@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from ckeditor.fields import RichTextField
+from django.urls import reverse
 
 # Create your models here.
 
