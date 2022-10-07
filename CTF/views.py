@@ -134,7 +134,7 @@ def task(request, id):
                 update_point = Client.objects.get(admin=request.user.id).point + Task.objects.get(id=id).point
                 Client.objects.filter(admin=request.user.id).update(point=update_point, date=datetime.now())
                 messages.info(request, 'To\'g\'ri javob')
-                Log(hacker=Client.objects.get(id=request.user.id),task=Task.objects.get(id=id), flag=flag).save()
+                Log(hacker=Client.objects.get(admin=request.user.id),task=Task.objects.get(id=id), flag=flag).save()
                 return redirect('challenges')
         else:
             ErrorLog(hacker=Client.objects.get(id=request.user.id),task=Task.objects.get(id=id)).save()
