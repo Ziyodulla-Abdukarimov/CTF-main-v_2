@@ -91,8 +91,11 @@
       <div id="sidebar" class="nav-collapse" style="background-color: #1e2140;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="{% url 'hacking' %}"><img src="{% static 'home/img/ui-sam.jpg' %}"
-                class="img-circle" width="80"></a></p>
+          <p class="centered">
+            <a href="{% url 'profile' %}">
+              <img src="{% static 'home/img/ui-sam.jpg' %}" class="w-50 img-circle">
+            </a>
+          </p>
           <h5 class="centered">{{ request.user.first_name }} {{ request.user.last_name }}</h5>
           <li class="mt">
             <a href="{% url 'hacking' %}">
@@ -110,12 +113,6 @@
             <a href="{% url 'profile' %}">
               <i class=" fa fa-user"></i>
               <span>Profile</span>
-            </a>
-          </li>
-          <li class="sub-menu">
-            <a href="{% url 'users' %}">
-              <i class=" fa fa-users"></i>
-              <span>Foydalanuvchilar</span>
             </a>
           </li>
           <li class="sub-menu">
@@ -164,9 +161,9 @@
         <div class="row">
           <div class="row mt-4 ms-2">
             <div class="col-12 col-sm-6 p-0 pe-sm-2">
-              <a href="{% url 'users' %}"><button class="btn d-flex justify-content-evenly w-100 h-100 m-0 p-0"
-                  style="background-color: #1a2332; color:white; border-radius: 1em;">
-                  <img class="w-100" src="{% static 'cyber.jpg' %}" style="border-radius: 1em;">
+              <a href="{% url 'scoreboard' %}"><button class="btn d-flex justify-content-evenly w-100 h-100 m-0 p-0"
+                  style="background-color: #1a2332; color:white; border-radius: 3rem;">
+                  <img class="w-100 h-100" src="https://s27389.pcdn.co/wp-content/uploads/2021/04/creating-rolling-out-effective-cyber-security-strategy-1024x440.jpeg.optimal.jpeg" style="border-radius: 3rem;">
 
                 </button></a>
               <!-- <video class="w-100 h-100" controls style="border-radius: 1rem;">
@@ -176,7 +173,7 @@
             </div>
             <div class="col-12 col-sm-6 p-0">
               <div class="w-100 p-5 h-100"
-                style="background-color: #1e2140; color:white; font-family: 'Roboto', sans-serif; border-radius: 1em;">
+                style="background-color: #1e2140; color:white; font-family: 'Roboto', sans-serif; border-radius: 3rem;">
                 <p class="fs-2" style="font-family: 'Poppins', sans-serif;">Cyber-Security.uz</p>
                 <p class="fs-4" style="font-family: 'Poppins', sans-serif;">&emsp; Assalom alaykum bizni platformamizda siz kiber xavfsizlik sohasidagi
                   bilimlaringizni sinovdan
@@ -193,7 +190,7 @@
             <div class="col-12 col-sm-3 p-0 pe-sm-2">
               <a href="{% url 'challenges' %}">
                 <button class="btn my_home_btn w-100 p-5"
-                  style="background-color: #1e2140; color:white; border-radius: 1em;">
+                  style="background-color: #1e2140; color:white; border-radius: 3rem;">
                   <div class="col-12" style="font-family: 'Roboto', sans-serif;">
                     <p style="font-size:50px;"><i class="fa-solid fa-bug mycard"></i></p>
                     <p class="fs-4">Topshiriqlar</p>
@@ -205,7 +202,7 @@
             <div class="col-12 col-sm-3 p-0 pe-sm-2">
               <a href="{% url 'lessons_list' %}">
                 <button class="btn w-100 m-0 p-5"
-                  style="background-color: #1e2140; color:white; border-radius: 1em;">
+                  style="background-color: #1e2140; color:white; border-radius: 3rem;">
                   <div class="col-12" style="font-family: 'Roboto', sans-serif;">
                     <p style="font-size:50px;"><i class="fa-solid fa-graduation-cap mycard"></i></p>
                     <p class="fs-4">Darsliklar</p>
@@ -215,9 +212,9 @@
               </a>
             </div>
             <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
-              <a href="{% url 'users' %}">
+              <a href="{% url 'scoreboard' %}">
                 <button class="btn w-100 m-0 p-5"
-                  style="background-color: #1e2140; color:white; border-radius: 1em;">
+                  style="background-color: #1e2140; color:white; border-radius: 3rem;">
                   <div class="col-12" style="font-family: 'Roboto', sans-serif;">
                     <p style="font-size:50px;"><i class="fa-solid fa-users mycard"></i></p>
                     <p class="fs-4">Foydalanuvchilar</p>
@@ -229,7 +226,7 @@
             <div class="col-12 col-sm-3 p-0 pt-2 pt-sm-0 pe-sm-2">
               <a href="{% url 'chempionats' %}">
                 <button class="btn w-100 m-0 p-5"
-                  style="background-color: #1e2140; color:white; border-radius: 1em;">
+                  style="background-color: #1e2140; color:white; border-radius: 3rem;">
                   <div class="col-12" style="font-family: 'Roboto', sans-serif;">
                     <p style="font-size:50px;"><i class="fa fa-trophy mycard"></i></p>
                     <p class="fs-4">Musobaqalar</p>

@@ -2,20 +2,22 @@
 
 {% block content %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<div class="row mt-5" style="font-family: 'Roboto', sans-serif; background-color: #292f40; color: white;">
-    <p class="fs-2 m-2 p-2 text-center">Topshiriqlar</p>
+<div class="row mt-5"
+    style="font-family: 'Roboto', sans-serif; border-radius: 3rem; background-color: #1e2140; color: white;">
+    <p class="fs-2 m-2 pt-4 text-center">Topshiriqlar</p>
     {% for task in task %}
-    <a class="p-2" href="challenges/{{ task.id }}" style="text-decoration: none; color: white;">
+    <a class="p-3" href="challenges/{{ task.id }}" style="text-decoration: none; color: white;">
         <div class="row d-flex align-items-center">
             <div class="col-1 text-center">
-                <img class="w-50"
+                <img style="border-radius: 50%; height: 40px; width: 50%;"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUjarush8rL4eLAraJHuE9OJeSaE-O0JkErA&usqp=CAU">
             </div>
             <div class="col-4">
                 <p class="fs-4">{{ forloop.counter }}. {{ task.title }}</p>
             </div>
             <div class="col-3">
-                <p class="fs-4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                <p class="fs-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-bug-fill" viewBox="0 0 16 16">
                         <path
                             d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A4.985 4.985 0 0 0 3 6h10a4.985 4.985 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A4.978 4.978 0 0 0 8 1a4.979 4.979 0 0 0-2.731.811l-.29-.956z" />
@@ -24,7 +26,8 @@
                     </svg> 12 ta masala</p>
             </div>
             <div class="col-2">
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-eye-fill" viewBox="0 0 16 16">
                         <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                         <path
@@ -36,9 +39,8 @@
                 <p class="fs-4">Jami bal: 300</p>
             </div>
         </div>
+        <hr class="mt-4">
     </a>
     {% endfor %}
 </div>
-<div class="col-12 mt-5 p-5"></div>
-<div class="col-12 mt-5 p-3"></div>
 {% endblock content %}

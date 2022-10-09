@@ -88,13 +88,6 @@ def notifications(request):
     return render(request, 'notifications.html')
 
 
-@login_required(login_url='login')
-def users(request):
-    context = {
-        'client': Client.objects.all(),
-    }
-    return render(request, 'users.html', context)
-
 
 @login_required(login_url='login')
 def challenges(request):

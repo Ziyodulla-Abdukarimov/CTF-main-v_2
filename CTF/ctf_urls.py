@@ -15,7 +15,6 @@ urlpatterns = [
     path('profile/<id>', hackers, name='hackers'),
     path('settings', settings, name='settings'),
     path('notifications', notifications, name='notifications'),
-    path('users', users, name='users'),
     path('scoreboard', scoreboard, name='scoreboard'),
 # Chempionats
     path('chempionats/', include(chempionats_url)),

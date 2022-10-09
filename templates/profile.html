@@ -5,10 +5,10 @@
 {% for hackers in client %}
 <div class="row">
   <div class="col-4 p-3">
-    <div class="row" style="background-color: #292f40;">
+    <div class="row" style="background-color: #1e2140; border-radius: 3rem;">
       <div class="row">
         <div class="col-12 text-center">
-          <img class="w-100" src="{% static 'home/img/ui-sam.jpg' %}" alt="" style="height: 310px">
+          <img class="w-100 mt-3" src="{% static 'home/img/ui-sam.jpg' %}" alt="" style="height: 310px; border-radius: 3rem;">
         </div>
         <div class="col-12 text-center">
           <h3 class="text-white mt-3">{{ hackers.admin.first_name }} {{ hackers.admin.last_name }}</h3>

@@ -6,22 +6,22 @@
     div.dataTables_length select {
         color: #a4b1cd;
         border-radius: 3px;
-        background-color: #1a2332;
+        background-color: #1E3240;
         border: 0;
         padding: 7px;
     }
     .dataTables_filter input
     {
-        background-color: #1a2332;
+        background-color: #1E3240;
         border: 0;
         padding: 7px;
         border-radius: 5px;
     }
 </style>
 <div class="row mt-5 m-2 rounded">
-    <div class="col-12 " style="background-color: #131c29; border-radius: 1rem;">
-        <p class="mt-5 pt-3 text-white fs-3 text-center" style="font-family: 'Roboto', sans-serif;">Natijalar Jadvali</p>
-        <table id="example" class="table table-hover display" style="background-color: #131c29;">
+    <div class="col-12 " style="background-color: #1e2140; border-radius: 3rem;">
+        <p class="mt-5 text-white fs-3 text-center" style="font-family: 'Roboto', sans-serif;">Natijalar Jadvali</p>
+        <table id="example" class="table table-hover display" style="background-color: #1e2140;">
             <thead style="color: #a4b1cd;">
                 <tr>
                     <th>#</th>
@@ -32,7 +32,7 @@
             </thead>
             <tbody>
                 {% for res in res %}
-                <tr style="border-bottom: 1px solid #1a2432;">
+                <tr style="border-bottom: 1px solid #1e2140;">
                     <th style="width: 5%; color: white;">{{ forloop.counter }}</th>
                     <td style="width: 30%">
                         <a style="color: white; font-family: 'Roboto', sans-serif;" href="profile/{{ res.id }}"><img class="p-2" style="height: 5rem" src="{% static 'home/img/favicon.png' %}">
@@ -55,9 +55,9 @@
             {
                 "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull)
                 {
-                    $('td', nRow).css('background-color', '#131c29');
-                    $('th', nRow).css('background-color', '#131c29');
-                    $('tr', nRow).css('background-color', '#131c29');
+                    $('td', nRow).css('background-color', '#1e2140');
+                    $('th', nRow).css('background-color', '#1e2140');
+                    $('tr', nRow).css('background-color', '#1e2140');
                 }
             }
         );
